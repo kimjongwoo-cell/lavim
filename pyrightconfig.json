@@ -1,0 +1,6 @@
+{
+  "venvPath": "/home/users/whddn12316/venvs",
+  "venv": "wsi-latentmas-py312",
+  "pythonVersion": "3.12",
+  "extraPaths": ["."]
+}

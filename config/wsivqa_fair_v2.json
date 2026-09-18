@@ -1,0 +1,41 @@
+{
+  "contract_id": "wsivqa-strict-fair-v2",
+  "dataset": {
+    "path": "/home/super/hj/HJ/WSI-VQA/dataset/WSI_captions/WsiVQA_test.json",
+    "expected_cases": 735,
+    "slide_root": "/media/super/4TB/hj/DATA_SVS"
+  },
+  "model": {
+    "checkpoint": "/media/super/4TB/hj/Qwen3-VL-4B-Thinking",
+    "served_name": "qwen3-vl-thinking",
+    "dtype": "bfloat16",
+    "max_model_len": 8192
+  },
+  "sampling": {
+    "do_sample": true,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "seed": 42
+  },
+  "generation": {
+    "native_thinking": true,
+    "max_new_tokens_per_request": 4096
+  },
+  "execution": {
+    "vllm_base_url": "http://127.0.0.1:8000/v1",
+    "worker_count": 6,
+    "max_verifier_rounds": 3
+  },
+  "evaluation": {
+    "script": "/home/super/hj/wsi_latentmas_0731/eval/metrics.py",
+    "metric_scope": "both"
+  },
+  "completion": {
+    "required_unique_results": 735,
+    "allow_silent_skip": false
+  },
+  "allowed_method_differences": [
+    "prompt",
+    "agent_graph"
+  ]
+}
