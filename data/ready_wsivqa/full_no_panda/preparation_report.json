@@ -1,0 +1,16 @@
+{
+  "panda_excluded": true,
+  "expected": {
+    "tcga_expert_vqa": 128,
+    "tcga_slidebench": 197,
+    "tcga": 221,
+    "gtex": 190
+  },
+  "ready": {
+    "tcga_expert_vqa": 128,
+    "tcga_slidebench": 197,
+    "tcga": 221,
+    "gtex": 190
+  },
+  "missing": []
+}

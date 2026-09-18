@@ -1,0 +1,2746 @@
+[
+ {
+  "Id": "panda__dbf7cc49ae2e9831448c3ca54ad92708",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__83ebc436de663c1259561ecec01d96ed",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b0d088f4fea23e7b17ef4c042f791727",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6a92eb76ed79700e3718ac8754e341cd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ee61886bdebe2748009da564edb587cc",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e696a20c83939434527ea9a8b4d26d24",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6525e666ca51cdae0b292dcd0b8e7483",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c1273fbac7df8d2188b1854ae6584e14",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e90c8fb1ab71a448843dfec8f21a15c8",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b9c08ad54a17440c8901a5d5516a53c6",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1832ae9a1efe869a99284ae7f98f744f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__40d6e4442b79b10865ca062d189c8913",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7eb79f3619425b7b26f3acb5de6c3fda",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9539ca1c39d9b6ff86f427ccbb0966c9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b887c69ecbc724b367ec91bda0b3d34e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__50467a6acf3c242827713dc6dd1b5836",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__95ceba057707ca5624053399bd2f14db",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bfc4d35887c4df323cfbe761d1f33c7c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9793c3c2317f38143d21a5187bb35652",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__cbf88cd3846a62ae84c565808b9b5bd0",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bcfa17affb4e89ebd01a97c580ed4cdd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1ac235330a79126d7b6e99abfe615161",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b3bd3ff9e2f3a2d68aa60f937787726c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__55b2b9388cfcde42069bee4804274884",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__97425535f7cd9edbfdcebb3d9fdce17b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__5846acd1f690271cfb0264154dcccdd9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1438f19e07c389b47fd5219ca62f9f0a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__63943deba402196b1f80f92b23881ddc",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__3737e0d7e43e1b09167f4036e9cc414b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1e73a4d3e89de944a6c309defde99839",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f3dcef8ce7e98c1f6dd6311a5fc7a5ed",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__99a853d64658ebefa3f3ad008d4d9fcb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__5fc5347c2d73fe6ebe3f5dfd6d8aa923",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6f362845996a98fdde62e6399fe1d097",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2d4e339401d42b194cf2eef7cdfc26ec",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d6f3c23a4b17f0710ab043f2f85940a6",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b35fe0cb1edc0b16f24480fe83e8b987",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__0b4fba162fc179a4cf63cc986f72ac4c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__a5be9b704fae4da3e8a8fcdcf17973e1",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__4cc466d486f1c68f746711866425db74",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9cb13cca3ac6868be386485a3cb6141e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__02e57c6acba29013ec3f1732ec373afe",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bb22714f2bff1aa310d8924efd28984f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ee5e98f996430e0ba9152fafb562596e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f35124ad7e0c9d8537a8e57966c06445",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c8cb1c570b772e3f7943e254ba096e9e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ae7dd6b6b0749f3b9b3001629b9db512",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__191e83ee04803d8fa8b5c43f0fde09c1",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__58b1a38c3fdac76c56e664b82f85d35a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__5f0f7d362bd640eaef0be4076229a7ef",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__3605ec5ecd6cd8f36a046746b1888cad",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__39114f65aa3185f05c4921cd2ce081eb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9fb37ce7f60b8395a47599f2b2def47e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b34133fbf7919da47bb893aa2fb1db3f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ff228af5af1389e09e293692ea479d98",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bfc5aa2abac6018b587819bf87cb1f9a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__8948231e22708d60c8f855d7cbae5cf3",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ca0798453868081bc8aeeabb01847d4e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1722126079d714cbffbe8e199976e0e2",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__431f5c9fb72ec0ec067c942a0ae01812",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__aecdd7b090b17375f15981e7313e11d0",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__31e9a210cfaf76f2df69e8b484cad534",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__da0c4c33709fb5d3372c7e0685b6a767",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__a4fe6a765a5d525015f97f2f967caa67",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__62dc9e6f426847d6d58e12c30e35a35a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d6301bdca437747a39ae971d5ad60aed",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__8603409c1d32c3fd6eb43f0a6abb0857",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__99f60de23ae443fc267155050cf905eb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d6948dc2044087d9b547df183328084f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__632e75c2e505dca41ae57573e70932b9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__26f717c6128d8e5d0854376f01893c8a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__91b65eeea73dd7309880c990458e97ca",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__743d3a6c9bd81c8fe2959f362d4a3cee",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c3e05f4e184d96d40bfb38631ab322df",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__03717c12ffe242a347cdfd9d13e6cd76",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ea72eb500f523697eee190bcedc8f0dd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__510932ca0cdcb0dc885ce987bc67387d",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ea5816321370d9d813bb7107c2ed0074",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6d5cb5353d700dfd4e6380508535e41b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__a839f9a08020d5e3001df11d08c567ed",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__86ceb5f49a8c7f81b12ee87934f0a25d",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b66da14818c806a8913a205fab8c6037",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__20b4e3b00b34fb10d8e00ab145d70692",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__21c61eab96e1f16d7caf28a6645c22fa",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__efd993cb48dce20304958c45829a3ff8",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9f1f0177237ed9f6c767aa1884abded4",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__0df6fef657c83392baa2bc0c89880615",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6f23c9de94899d380bd7a075209ef415",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__589fb4c43782864aa69fb1b7d08abe1c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fb8886059879eaac70139336cb525838",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__346cf9a23c4ddd3c86ac4d732424d9b8",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7a8abc693ab86d8b1e89e6ebe3169fb7",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d439005ae0aeb218bcc014e67c92aba0",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ea625b78a563a172ca499da8f7829261",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ba8bc951801ef17040b62f984c291d70",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b48211c0c0fba52fcc8d919d03ed005b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__71ca19a708b9e60d55b034cc6ab5a978",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6f59b0e5e3fb83824e6d994793cc00ed",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9a22abb1da9fc91bb8ae7b91bfe1451e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2fc6bf2ccab59b08bb4b3cb2ee0602d9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fa6a2270986c61fcb0a34e9dd91a910c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e76cc2d3737dbc26679c44b4deb9ba94",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__87bbc9137ece5aaeef9d67f6abeb99df",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c949b282b94808a40935c6cfe9f2fb67",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ce24af9d3fb0d05a754acfcc0ec1a700",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__028098c36eb49a8c6aa6e76e365dd055",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f6224279854d1b5e5b41e7cd3182caef",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__5a258172c6d220c464e500a1fb880b20",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2384f9b394b4aebf46feef7bda01efdb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f0098375c984c08db1a94086d80e7f27",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1d8de93e7c638323a0572bbc7e3c927e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ea676a3e54bdcabbb71961bae282e561",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__3444f3932c7c9d04bb8fcb095037ad06",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7a4a98bfcac87d4496e2b182a4b1a293",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d0a19a35996817e2b7a5f4c6c35c57be",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__4c9894ef150c2661e2c1ad333542f058",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c286cf324f3d429aaf5d3f903e5ce634",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__3b537df59920e10d46f14627abcd3227",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d6278afea5048a9494af240884f3b038",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6c8072d548422d357e97a528a9ce37ec",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__607c6585bb0b244506f16da4073ef12e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b084fef2354fe904f2279fa7d376855b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__8423df90dddd142668c18b6ab5ff7f17",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__62c9db4e05a648c8795ae51a49003906",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9fa1b4e617cbc88646794a6204e2d897",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d844c98b020831cd13e0dbed2f72e719",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__de16d4d453830a7b68b20e591f41bc6c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__61ece421cba834e92bb6338e30c5f6e4",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__3bec458737cfadd414c267ce0200c941",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__37cbb00ca8f207cb9fde012b0ad7d670",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7e059274c3afb96b3a33191c804d5a0f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__50f2942a4d731666067eab3d0bf0011a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b2e452fe7fc20523a2a54b2d2db5c9ab",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f6ed84e1e5bdb1ee5d79e0f5353b42ef",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2c875f4a66fa395e8781dd797a6ea8db",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fe5717205561fb01917f7e1a27ddc2a9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6f5722cf3b8e5a90dc1e0eff127c4632",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__114db3f43c4ac596ba4e0da70b7afc90",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b975fb616a704b596fd49c6ffce543a9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d1e98dd82b39587a6ad1f1351fd8269e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__8dee9c79fba34ba0c928d28de9aa9c2f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__06cab87cd7a132bd8eaa30aa1ea42434",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fd3b376d8b119c3a43e93e57710616fd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__4375505cc90a8de4e82c267a1d2f97f4",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__26b5257856e96a2a3d3d3e681ae13aa1",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__381d70c821fce9d79032bc113f10ec43",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__37bcf02187f518f188dc8d97038f3e84",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bced61c055b97795c15fd6020cbf1c96",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__4607eab3c100ba73a7815b20fb2f3cdb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__a87ae06869fe9beb4ce6e82bf5a5794c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fa7ece1587e37e28416110063cc5266a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__565b748e64e5f6895bb1abce1a7ec163",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__05a5622cb79be8e83a265ee80fd52d86",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__4e6e65a0d88a155afa71221ceceee985",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ba425e2a625a06fc0bf3964100264a14",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bb67046f34a39fc197282a781a32e5cb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__19638106770d8d0494e4d1ccf64e1662",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__52ebb96589e05091e3ec2376f1e90e2b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__69a41dd83be22e8dd84599984bee2d3a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e8b55cf005b13b68d988de5b8ea3da95",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f28d60a3f5606122a0f412e1092c94a4",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9b8895fcc7325a09cc4ff4653fbb48f9",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e76c15467a217238e680e38de3128f05",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e11bf0b85e05a02ecd2461c686fa2257",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c192a7c5a94aacbb3293267bf206bf5a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__e63f31b23d81011340b12022892f7b27",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "2",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__d6554a3cff6d6ceb5597382238954aa1",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__b1592124fa872ab5ad10d0d5dbf80a30",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ae6f1a04d5c4fc301a8084cb2c888166",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ba390e5e4282174c95e4ccd8eaa52ecd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f66a4dd851970a5b52968a34a9165dda",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f4ee61458d542b826014e72cb224a0b6",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__c614dc18ffa37f8007c2aead39e65342",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__9b8a5982b7e917e82a0b0ae84b922a55",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7cc3935f0c256daf77c943ca91f2fcd3",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__00928370e2dfeb8a507667ef1d4efcbb",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7f153e8ad8fff37222bb530d9bfb3a23",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f96cc0b4bfe5c400bb8e198728e301d2",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f2bdcd0529edc4f24290b17c93f49743",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__749cd48d71d41aef0b04653f898caa7b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__1c0fbb1d600f761847294c4b8019edfe",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2e8108a8a3804a73fe77559ee141af8e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2ce7388467758e8e5f310aba63f87ead",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__bc8042b8de3ce084219ac65217fc9e0a",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__ac9f59ca466750dbc43bae3ade2676a3",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__7493b991594249bb3027be2df62a4dfd",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__8022e1100531e89ce625f6556730c162",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__721690a32ab390374b3f0aba58e0e722",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__cf28cb8b44e9549b766ece06085f647f",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__41b5859aa0d162eb72387b3ee8a8903e",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "5",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__2bb71a08eb8c45dc81ff474387144987",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "0",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__6519a41ad0cd0eadde0cde1ee256d141",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__19cd8d1657528f7d4895398a6fd093ec",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "4",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__fb39e72460b6da6ea5e9c8efbee2c78c",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__a47472a2ba96c2936dacc23b938bd9b6",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "3",
+  "Task": "panda"
+ },
+ {
+  "Id": "panda__f9b2162716bb1679a53424b0e6bc7f9b",
+  "Question": "You are being provided with a sample of prostate tissue. Please analyze the tissue thoroughly and assign an ISUP grade. Assign an ISUP Grade Group (1–5) if carcinoma is present. Output 0 if there is no evidence of carcinoma. \n\nISUP grades are defined as follows:\n- Grade 1: Gleason ≤6\n- Grade 2: Gleason 3+4=7\n- Grade 3: Gleason 4+3=7\n- Grade 4: Gleason 8\n- Grade 5: Gleason 9-10",
+  "Choice": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "Answer": "1",
+  "Task": "panda"
+ }
+]
