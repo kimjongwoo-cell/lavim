@@ -1,0 +1,62 @@
+[
+ {
+  "Id": "tcga_expert_vqa__3",
+  "Question": "What is the architecture of the abnormal tissue",
+  "Choice": [
+   "Papillary",
+   "Solid",
+   "Nodular",
+   "Sarcomatoid"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__4",
+  "Question": "How many fragments of tissue contain abnormal cells",
+  "Choice": [
+   "1",
+   "2",
+   "3",
+   ">4"
+  ],
+  "Answer": ">4",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__11",
+  "Question": "Where are the areas of necrosis, if present?",
+  "Choice": [
+   "Present on the left piece of tissue",
+   "Present on the right piece of tissue",
+   "Present on both pieces of tissue",
+   "Not present"
+  ],
+  "Answer": "Present on both pieces of tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_slidebench__1771",
+  "Question": "Based on the analysis of the whole slide image,what structural feature is most likely to be present in the surrounding pulmonary parenchyma in the case of lung adenocarcinoma?",
+  "Choice": [
+   "Anthracosis",
+   "Hyaline cartilage",
+   "Pleomorphic glandular structures",
+   "Birefringent crystals"
+  ],
+  "Answer": "Anthracosis",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2339",
+  "Question": "Based on histological features, what is the most likely diagnosis for the tumor present in the prostate?",
+  "Choice": [
+   "Prostatic adenocarcinoma",
+   "Benign prostatic hyperplasia",
+   "High-grade prostatic intraepithelial neoplasia (HGPIN)",
+   "Squamous cell carcinoma"
+  ],
+  "Answer": "Prostatic adenocarcinoma",
+  "Task": "tcga_slidebench"
+ }
+]

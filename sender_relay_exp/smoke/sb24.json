@@ -1,0 +1,290 @@
+[
+ {
+  "Id": "tcga_slidebench__1771",
+  "Question": "Based on the analysis of the whole slide image,what structural feature is most likely to be present in the surrounding pulmonary parenchyma in the case of lung adenocarcinoma?",
+  "Choice": [
+   "Anthracosis",
+   "Hyaline cartilage",
+   "Pleomorphic glandular structures",
+   "Birefringent crystals"
+  ],
+  "Answer": "Anthracosis",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2339",
+  "Question": "Based on histological features, what is the most likely diagnosis for the tumor present in the prostate?",
+  "Choice": [
+   "Prostatic adenocarcinoma",
+   "Benign prostatic hyperplasia",
+   "High-grade prostatic intraepithelial neoplasia (HGPIN)",
+   "Squamous cell carcinoma"
+  ],
+  "Answer": "Prostatic adenocarcinoma",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__214",
+  "Question": "What is the stage of the disease based on the histopathological findings in the lymph nodes of the left axilla in the provided whole slide image?",
+  "Choice": [
+   "N0",
+   "N1",
+   "N2",
+   "N3"
+  ],
+  "Answer": "N1",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__1094",
+  "Question": "What pathological change is NOT observed in the non-tumorous kidney tissue?",
+  "Choice": [
+   "A thin rim of atrophic renal tissue near the tumor",
+   "Widespread renal vein invasion by tumor thrombi",
+   "Minimal intimal fibrosis of the renal arteries",
+   "No significant changes in renal pelvis and ureter"
+  ],
+  "Answer": "Widespread renal vein invasion by tumor thrombi",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2653",
+  "Question": "Which histopathological change is observed in the non-neoplastic mucosa surrounding the tumor in this case?",
+  "Choice": [
+   "Active superficial chronic gastritis.",
+   "Inactive superficial chronic gastritis.",
+   "Ulceration with acute inflammation.",
+   "Intestinal metaplasia."
+  ],
+  "Answer": "Inactive superficial chronic gastritis.",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2890",
+  "Question": "Which histopathological change is present in the upper left parietal pleura nodule?",
+  "Choice": [
+   "Focal muscle infiltration by epithelial thymoma",
+   "Diffuse necrosis of lymphoid tissue",
+   "Prominent fibrosis without muscle involvement",
+   "Extensive epithelial necrosis and lymphoid depletion"
+  ],
+  "Answer": "Focal muscle infiltration by epithelial thymoma",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2631",
+  "Question": "Which tumor grading is most consistent with the observed cellular features?",
+  "Choice": [
+   "Grade 1: Well-differentiated",
+   "Grade 2: Moderately differentiated",
+   "Grade 3: Poorly differentiated",
+   "Grade 4: Undifferentiated"
+  ],
+  "Answer": "Grade 3: Poorly differentiated",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__1741",
+  "Question": "Examine the stroma pattern in the provided slide and identify which pattern is often associated with poorly differentiated adenocarcinoma featuring clear cell change.",
+  "Choice": [
+   "Dense fibrous stroma",
+   "Myxoid stroma",
+   "Amyloid-like stroma",
+   "Osteoid-like stroma"
+  ],
+  "Answer": "Amyloid-like stroma",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2899",
+  "Question": "What is the most likely differential diagnosis for a mediastinal mass with mixed lymphoid and epithelial cell features?",
+  "Choice": [
+   "Reactive thymic hyperplasia",
+   "Type AB thymoma",
+   "Pulmonary carcinoma",
+   "Non-Hodgkin lymphoma"
+  ],
+  "Answer": "Type AB thymoma",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2461",
+  "Question": "What percentage of the tumor is necrotic based on the histological description?",
+  "Choice": [
+   "1-3%",
+   "5-10%",
+   "20-30%",
+   "40-50%"
+  ],
+  "Answer": "5-10%",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__3030",
+  "Question": "What is the histological subtype of the adenocarcinoma described in this pathology report?",
+  "Choice": [
+   "Papillary serous carcinoma",
+   "Clear cell carcinoma",
+   "Endometrioid adenocarcinoma",
+   "Mucinous carcinoma"
+  ],
+  "Answer": "Endometrioid adenocarcinoma",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2772",
+  "Question": "Considering the lack of extrathyroidal extension, what is the most appropriate staging category for this tumor?",
+  "Choice": [
+   "T1N0M0.",
+   "T2N0M0.",
+   "T3N1M1.",
+   "T4N0M0."
+  ],
+  "Answer": "T2N0M0.",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__479",
+  "Question": "Refer to the provided whole slide image of ductal carcinoma infiltration and identify the characteristic cytomorphological feature.",
+  "Choice": [
+   "Small,uniform,round cells",
+   "Cells with high nuclear atypia",
+   "Cells with abundant cytoplasm and uniform nuclei",
+   "Spindle-shaped cells with minimal mitotic activity"
+  ],
+  "Answer": "Cells with high nuclear atypia",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__554",
+  "Question": "According to the TNM staging system,based on the whole slide image of the left breast mastectomy specimen,what is the stage of the primary tumor?",
+  "Choice": [
+   "pT1c",
+   "pT2",
+   "pT3",
+   "pT4"
+  ],
+  "Answer": "pT3",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2998",
+  "Question": "How would the endometrial tumor be classified based on histopathological subtype?",
+  "Choice": [
+   "Clear cell carcinoma",
+   "Endometrioid adenocarcinoma, NOS",
+   "Serous adenocarcinoma",
+   "Mucinous adenocarcinoma"
+  ],
+  "Answer": "Endometrioid adenocarcinoma, NOS",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__51",
+  "Question": "Which feature is most prominent in the tumor?",
+  "Choice": [
+   "Well differentiated",
+   "Moderately differentiated",
+   "Poorly differentiated",
+   "Cannot be determined"
+  ],
+  "Answer": "Moderately differentiated",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2208",
+  "Question": "What percentage of Gleason pattern 4 is observed in this prostate tumor?",
+  "Choice": [
+   "Approximately 40%",
+   "Approximately 20%",
+   "Approximately 60%",
+   "Approximately 10%"
+  ],
+  "Answer": "Approximately 40%",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__927",
+  "Question": "Based on the histological features observed in the provided whole slide image,what is the correct diagnosis for the left temporal lesion?",
+  "Choice": [
+   "Low-grade astrocytoma",
+   "Anaplastic astrocytoma",
+   "Glioblastoma,small cell subtype",
+   "Oligodendroglioma"
+  ],
+  "Answer": "Glioblastoma,small cell subtype",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__3143",
+  "Question": "What FIGO stage grouping corresponds to the uterine endometrial adenocarcinoma in this case?",
+  "Choice": [
+   "IIIA",
+   "IVB",
+   "IB",
+   "IIB"
+  ],
+  "Answer": "IVB",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__1412",
+  "Question": "Which cytomorphological feature is absent in the mixed oligoastrocytoma shown in the provided slide?",
+  "Choice": [
+   "Moderate nuclear pleomorphism",
+   "Necrosis",
+   "Low MIB-1 proliferation index",
+   "Difficult to find mitotic figures"
+  ],
+  "Answer": "Necrosis",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2032",
+  "Question": "Based on the whole slide image,what overall tissue structure is indicative of squamous cell carcinoma in the lung?",
+  "Choice": [
+   "Glandular arrangement with gland formations",
+   "Sheets of polygonal cells with keratin pearls",
+   "Small round blue cells arranged in rosettes",
+   "Spindle cells arranged in a storiform pattern"
+  ],
+  "Answer": "Sheets of polygonal cells with keratin pearls",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2821",
+  "Question": "What is the pathological staging (pTNM) of the dominant left lobe tumor based on the information provided?",
+  "Choice": [
+   "pT1",
+   "pT2",
+   "pT3",
+   "pT4"
+  ],
+  "Answer": "pT3",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__1117",
+  "Question": "What is the Fuhrman nuclear grade assigned to the renal cell carcinoma?",
+  "Choice": [
+   "Grade 1",
+   "Grade 2",
+   "Grade 3",
+   "Grade 4"
+  ],
+  "Answer": "Grade 4",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__776",
+  "Question": "What histological grade is assigned to the colorectal adenocarcinoma in the provided whole slide image?",
+  "Choice": [
+   "G1",
+   "G2",
+   "G3",
+   "G4"
+  ],
+  "Answer": "G2",
+  "Task": "tcga_slidebench"
+ }
+]

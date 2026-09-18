@@ -1,0 +1,26 @@
+[
+ {
+  "Id": "tcga_slidebench__1771",
+  "Question": "Based on the analysis of the whole slide image,what structural feature is most likely to be present in the surrounding pulmonary parenchyma in the case of lung adenocarcinoma?",
+  "Choice": [
+   "Anthracosis",
+   "Hyaline cartilage",
+   "Pleomorphic glandular structures",
+   "Birefringent crystals"
+  ],
+  "Answer": "Anthracosis",
+  "Task": "tcga_slidebench"
+ },
+ {
+  "Id": "tcga_slidebench__2339",
+  "Question": "Based on histological features, what is the most likely diagnosis for the tumor present in the prostate?",
+  "Choice": [
+   "Prostatic adenocarcinoma",
+   "Benign prostatic hyperplasia",
+   "High-grade prostatic intraepithelial neoplasia (HGPIN)",
+   "Squamous cell carcinoma"
+  ],
+  "Answer": "Prostatic adenocarcinoma",
+  "Task": "tcga_slidebench"
+ }
+]

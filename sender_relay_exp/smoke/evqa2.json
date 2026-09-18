@@ -1,0 +1,26 @@
+[
+ {
+  "Id": "tcga_expert_vqa__3",
+  "Question": "What is the architecture of the abnormal tissue",
+  "Choice": [
+   "Papillary",
+   "Solid",
+   "Nodular",
+   "Sarcomatoid"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__4",
+  "Question": "How many fragments of tissue contain abnormal cells",
+  "Choice": [
+   "1",
+   "2",
+   "3",
+   ">4"
+  ],
+  "Answer": ">4",
+  "Task": "tcga_expert_vqa"
+ }
+]

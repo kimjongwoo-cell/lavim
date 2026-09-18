@@ -1,0 +1,122 @@
+[
+ {
+  "Id": "tcga_expert_vqa__3",
+  "Question": "What is the architecture of the abnormal tissue",
+  "Choice": [
+   "Papillary",
+   "Solid",
+   "Nodular",
+   "Sarcomatoid"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__4",
+  "Question": "How many fragments of tissue contain abnormal cells",
+  "Choice": [
+   "1",
+   "2",
+   "3",
+   ">4"
+  ],
+  "Answer": ">4",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__11",
+  "Question": "Where are the areas of necrosis, if present?",
+  "Choice": [
+   "Present on the left piece of tissue",
+   "Present on the right piece of tissue",
+   "Present on both pieces of tissue",
+   "Not present"
+  ],
+  "Answer": "Present on both pieces of tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__13",
+  "Question": "Where are cells with prominent nucleoli present?",
+  "Choice": [
+   "Diffusely throughout the tissue",
+   "Diffusely throughout the left half of the tissue",
+   "Diffusely throughout the upper half of the tissue",
+   "Not present"
+  ],
+  "Answer": "Diffusely throughout the left half of the tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__17",
+  "Question": "What is the degree of nuclear pleomorphism among the abnormal cells?",
+  "Choice": [
+   "Zero",
+   "Mild",
+   "Moderate",
+   "Marked"
+  ],
+  "Answer": "Marked",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__27",
+  "Question": "Is necrosis present on the whole slide image?",
+  "Choice": [
+   "Yes, diffusely throughout the tissue",
+   "No, necrosis is absent",
+   "Not sure",
+   "Yes, necrosis is focally present"
+  ],
+  "Answer": "Yes, diffusely throughout the tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__28",
+  "Question": "What is the predominant shape of the nuclei in the abnormal cells",
+  "Choice": [
+   "Polygonal",
+   "Round",
+   "Elongated",
+   "Reniform"
+  ],
+  "Answer": "Round",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__29",
+  "Question": "Is abnormal vasculature present on the whole slide image?",
+  "Choice": [
+   "Yes, on one tissue fragment",
+   "Yes, on two tissue fragments",
+   "Yes, on three or more tissue fragments",
+   "No, it’s not present"
+  ],
+  "Answer": "Yes, on three or more tissue fragments",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__31",
+  "Question": "On which side of the tissue fragments are the abnormal cells concentrated?",
+  "Choice": [
+   "Left side",
+   "Right side",
+   "Not present",
+   "Diffusely"
+  ],
+  "Answer": "Right side",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__35",
+  "Question": "Where is cartilage present on the whole slide image",
+  "Choice": [
+   "Multifocal throughout the tissue",
+   "Focally on the left side of the tissue",
+   "Not present",
+   "Focally on the right side of the tissue"
+  ],
+  "Answer": "Multifocal throughout the tissue",
+  "Task": "tcga_expert_vqa"
+ }
+]

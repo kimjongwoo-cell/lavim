@@ -1,0 +1,290 @@
+[
+ {
+  "Id": "tcga_expert_vqa__3",
+  "Question": "What is the architecture of the abnormal tissue",
+  "Choice": [
+   "Papillary",
+   "Solid",
+   "Nodular",
+   "Sarcomatoid"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__4",
+  "Question": "How many fragments of tissue contain abnormal cells",
+  "Choice": [
+   "1",
+   "2",
+   "3",
+   ">4"
+  ],
+  "Answer": ">4",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__11",
+  "Question": "Where are the areas of necrosis, if present?",
+  "Choice": [
+   "Present on the left piece of tissue",
+   "Present on the right piece of tissue",
+   "Present on both pieces of tissue",
+   "Not present"
+  ],
+  "Answer": "Present on both pieces of tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__13",
+  "Question": "Where are cells with prominent nucleoli present?",
+  "Choice": [
+   "Diffusely throughout the tissue",
+   "Diffusely throughout the left half of the tissue",
+   "Diffusely throughout the upper half of the tissue",
+   "Not present"
+  ],
+  "Answer": "Diffusely throughout the left half of the tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__17",
+  "Question": "What is the degree of nuclear pleomorphism among the abnormal cells?",
+  "Choice": [
+   "Zero",
+   "Mild",
+   "Moderate",
+   "Marked"
+  ],
+  "Answer": "Marked",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__27",
+  "Question": "Is necrosis present on the whole slide image?",
+  "Choice": [
+   "Yes, diffusely throughout the tissue",
+   "No, necrosis is absent",
+   "Not sure",
+   "Yes, necrosis is focally present"
+  ],
+  "Answer": "Yes, diffusely throughout the tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__28",
+  "Question": "What is the predominant shape of the nuclei in the abnormal cells",
+  "Choice": [
+   "Polygonal",
+   "Round",
+   "Elongated",
+   "Reniform"
+  ],
+  "Answer": "Round",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__29",
+  "Question": "Is abnormal vasculature present on the whole slide image?",
+  "Choice": [
+   "Yes, on one tissue fragment",
+   "Yes, on two tissue fragments",
+   "Yes, on three or more tissue fragments",
+   "No, it’s not present"
+  ],
+  "Answer": "Yes, on three or more tissue fragments",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__31",
+  "Question": "On which side of the tissue fragments are the abnormal cells concentrated?",
+  "Choice": [
+   "Left side",
+   "Right side",
+   "Not present",
+   "Diffusely"
+  ],
+  "Answer": "Right side",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__35",
+  "Question": "Where is cartilage present on the whole slide image",
+  "Choice": [
+   "Multifocal throughout the tissue",
+   "Focally on the left side of the tissue",
+   "Not present",
+   "Focally on the right side of the tissue"
+  ],
+  "Answer": "Multifocal throughout the tissue",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__54",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Papillary",
+   "Oncocytic",
+   "Chromophobe",
+   "Clear Cell"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__64",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Follicular",
+   "Clear cell",
+   "Papillary",
+   "Anaplastic"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__69",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Papillary",
+   "Oncocytic",
+   "Chromophobe",
+   "Clear Cell"
+  ],
+  "Answer": "Clear Cell",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__75",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Small cell",
+   "Astrocytic",
+   "Gemistocytic",
+   "Oligodendroglial-like"
+  ],
+  "Answer": "Astrocytic",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__77",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Adenocarcinoma",
+   "Adenosquamous",
+   "Papillary",
+   "Serous"
+  ],
+  "Answer": "Adenocarcinoma",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__86",
+  "Question": "Which architectural pattern best describes the tumor?",
+  "Choice": [
+   "Papillary",
+   "Acinar",
+   "Lepidic",
+   "Solid"
+  ],
+  "Answer": "Acinar",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__94",
+  "Question": "Identify the predominant tumor cell type:",
+  "Choice": [
+   "Papillary",
+   "Oncocytic",
+   "Chromophobe",
+   "Clear Cell"
+  ],
+  "Answer": "Clear Cell",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__110",
+  "Question": "What is the status of the black ink margin?",
+  "Choice": [
+   "Negative for in situ and invasive carcinoma",
+   "Positive for in situ carcinoma only",
+   "Positive for invasive carcinoma only",
+   "Positive for both  invasive and in situ carcinoma"
+  ],
+  "Answer": "Positive for invasive carcinoma only",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__114",
+  "Question": "How would you describe the architecture of the tumor?",
+  "Choice": [
+   "Papillary",
+   "Solid",
+   "Nested",
+   "Trabecular"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__116",
+  "Question": "Which pattern is not represented in this tumor?",
+  "Choice": [
+   "Solid",
+   "Nested",
+   "Microcystic",
+   "Papillary"
+  ],
+  "Answer": "Papillary",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__120",
+  "Question": "Which quadrant contains the largest lymphoid follicle?",
+  "Choice": [
+   "Upper left",
+   "Upper right",
+   "Lower left",
+   "Lower right"
+  ],
+  "Answer": "Lower left",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__125",
+  "Question": "What percent of the tumor shows solid growth pattern?",
+  "Choice": [
+   "No solid growth",
+   "<5%",
+   "6-50%",
+   ">50%"
+  ],
+  "Answer": ">50%",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__126",
+  "Question": "Which type of ductal carcinoma in situ pattern is most prominent on this slide?",
+  "Choice": [
+   "Solid with comedonecrosis",
+   "Micropapillary",
+   "Papillary",
+   "Cribriform"
+  ],
+  "Answer": "Solid with comedonecrosis",
+  "Task": "tcga_expert_vqa"
+ },
+ {
+  "Id": "tcga_expert_vqa__127",
+  "Question": "Which benign finding is seen in the background breast tissue?",
+  "Choice": [
+   "Fibroadenoma",
+   "Apocrine metaplasia",
+   "Pseudoangiomatous hyperplasia",
+   "Mastitis"
+  ],
+  "Answer": "Apocrine metaplasia",
+  "Task": "tcga_expert_vqa"
+ }
+]
