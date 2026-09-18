@@ -1,0 +1,582 @@
+"""Latent-only transport primitives for the four-agent OnePass topology."""
+
+from __future__ import annotations
+
+from copy import deepcopy
+import os
+import time
+from typing import Callable, Generic, Literal, Protocol, TypeVar
+
+from PIL import Image
+from pydantic import TypeAdapter
+
+from vision_text_mas.contracts import RoleCall
+from vision_text_mas.errors import FailureCode, PipelineFailure
+from vision_text_mas.latent_client import FallbackFactory, LatentJsonClient
+from vision_text_mas.latent_state import LatentCaseState
+from vision_text_mas.navigation_contracts import EvidencePlan
+from vision_text_mas.qwen_client import ParsedRoleCall
+
+
+CacheT = TypeVar("CacheT")
+OutputT = TypeVar("OutputT")
+
+
+def _locate_upstream_line(lines: list[str], *, prefix: str, stage: str) -> int:
+    """Return the sole line index carrying the prior-agent text payload."""
+    matched = [index for index, line in enumerate(lines) if line.startswith(prefix)]
+    if len(matched) != 1:
+        raise PipelineFailure(
+            code=FailureCode.MODEL_OUTPUT,
+            stage=stage,
+            detail=(
+                "expected exactly one serialized upstream prompt line with "
+                f"prefix {prefix!r}; found {len(matched)}"
+            ),
+        )
+    return matched[0]
+
+
+def remove_serialized_upstream_line(
+    prompt: str,
+    *,
+    prefix: str,
+    stage: str,
+) -> str:
+    """Remove the one prior-agent text payload that is carried by KV instead."""
+    lines = prompt.splitlines(keepends=True)
+    dropped = _locate_upstream_line(lines, prefix=prefix, stage=stage)
+    return "".join(line for index, line in enumerate(lines) if index != dropped)
+
+
+_NO_RESTATE = "so use only what helps and do not restate it."
+_DO_RESTATE = (
+    "so use only what helps. First restate, in text, the original contents you "
+    "received, as faithfully as you can; then continue with your own task."
+)
+
+
+def restate_note(note: str) -> str:
+    """LatentMAS Appendix-E mirroring (env VLMAS_LATENT_RESTATE=1; off = note unchanged).
+
+    The paper hands each latent-consuming agent a prompt asking it to output "(1) original
+    plan contents" before its own work, and its Appendix D case study reads the latent
+    handoff by having the downstream agent verbalise it. Our note forbids exactly that, so
+    this swaps the clause when the flag is on. Any note without the clause is returned as
+    is, so turning the flag on can never silently rewrite an unrelated prompt.
+    """
+    if os.environ.get("VLMAS_LATENT_RESTATE", "").strip() != "1":
+        return note
+    return note.replace(_NO_RESTATE, _DO_RESTATE)
+
+
+def announce_latent_upstream(
+    prompt: str,
+    *,
+    prefix: str,
+    note: str,
+    stage: str,
+) -> str:
+    """Swap the KV-carried payload line for a short latent-handoff note.
+
+    Mirrors the original LatentMAS convention of telling each downstream agent
+    that its upstream context arrives in latent state, without re-feeding the
+    serialized text the KV already holds.
+    """
+    lines = prompt.splitlines(keepends=True)
+    index = _locate_upstream_line(lines, prefix=prefix, stage=stage)
+    newline = "\n" if lines[index].endswith("\n") else ""
+    lines[index] = f"{restate_note(note)}{newline}"
+    return "".join(lines)
+
+
+class LatentTransportBackend(Protocol[CacheT]):
+    """The stateful operations required by the OnePass role transport."""
+
+    def append_multimodal_latent(
+        self,
+        state: LatentCaseState[CacheT],
+        *,
+        stage: str,
+        images: tuple[Image.Image, ...],
+        system: str,
+        prompt: str,
+        latent_steps: int,
+    ) -> LatentCaseState[CacheT]: ...
+
+    def branch_multimodal_latent(
+        self,
+        state: LatentCaseState[CacheT],
+        *,
+        stage: str,
+        images: tuple[Image.Image, ...],
+        system: str,
+        prompt: str,
+        latent_steps: int,
+    ) -> LatentCaseState[CacheT]: ...
+
+    def decode_on_clone(
+        self,
+        state: LatentCaseState[CacheT],
+        *,
+        system: str,
+        prompt: str,
+        max_new_tokens: int,
+        json_prefix: str | None,
+        json_schema: str | None = None,
+    ) -> str: ...
+
+    def decode_in_place(
+        self,
+        state: LatentCaseState[CacheT],
+        *,
+        system: str,
+        prompt: str,
+        max_new_tokens: int,
+        json_prefix: str | None,
+        json_schema: str | None = None,
+    ) -> str: ...
+
+    def release(self, state: LatentCaseState[CacheT]) -> None: ...
+
+class LatentRoleClient(Generic[CacheT]):
+    """Carry Planner, Navigator, and Reasoner state without decoded prose."""
+
+    def __init__(
+        self,
+        *,
+        backend: LatentTransportBackend[CacheT],
+        initial_state: LatentCaseState[CacheT],
+        latent_steps: int,
+        max_model_len: int,
+        retain_navigator_kv: bool = True,
+    ) -> None:
+        self._backend = backend
+        self._decoder = LatentJsonClient(backend)
+        self._state = initial_state
+        self._latent_steps = latent_steps
+        self._max_model_len = max_model_len
+        self._retain_navigator_kv = retain_navigator_kv
+
+    @property
+    def state(self) -> LatentCaseState[CacheT]:
+        """Expose only the immutable, tensor-owning state snapshot."""
+        return self._state
+
+    def append_only(
+        self,
+        *,
+        role: str,
+        images: tuple[Image.Image, ...],
+        image_labels: tuple[str, ...],
+        system_prompt: str,
+        user_prompt: str,
+    ) -> RoleCall:
+        """Advance one intermediate role without exposing textual reasoning."""
+        if len(images) != len(image_labels):
+            raise PipelineFailure(
+                code=FailureCode.MODEL_OUTPUT,
+                stage=role,
+                detail="image labels must match the image count",
+            )
+        started = time.perf_counter()
+        # C2 kill test (VLMAS_REASONER_LATENT_STEPS): reallocate the Reasoner's
+        # latent budget; the Answerer takes the rest via
+        # VLMAS_ANSWERER_LATENT_STEPS. Unset = unchanged.
+        import os as _os
+        latent_steps = self._latent_steps
+        if role == "reasoner" and _os.environ.get("VLMAS_REASONER_LATENT_STEPS", "").strip():
+            latent_steps = int(_os.environ["VLMAS_REASONER_LATENT_STEPS"])
+        state = self._backend.append_multimodal_latent(
+            self._state,
+            stage=role,
+            images=images,
+            system=system_prompt,
+            prompt=user_prompt,
+            latent_steps=latent_steps,
+        )
+        if state.cache_length > self._max_model_len:
+            raise PipelineFailure(
+                code=FailureCode.MODEL_EXECUTION,
+                stage=role,
+                detail=(
+                    "latent state exceeds the fixed context limit: "
+                    f"{state.cache_length} > {self._max_model_len}"
+                ),
+            )
+        self._state = state
+        # Interpretability probe (VLMAS_DECODE_STAGE_DEBUG=1): render the
+        # latent state as text via a NON-INVASIVE clone decode after each
+        # latent role — the main KV is untouched, results are printed only.
+        import os as _os
+        decoded_debug = ""
+        if _os.environ.get("VLMAS_DECODE_STAGE_DEBUG", "") == "1":
+            try:
+                decoded_debug = self._backend.decode_on_clone(
+                    state,
+                    system="",
+                    prompt=("Summarize in plain English what you have "
+                            "concluded and what you plan to do next."),
+                    max_new_tokens=220,
+                    json_prefix=None,
+                )
+                print(f"[LatentDecode:{role}] {decoded_debug[:600]}",
+                      flush=True)
+            except Exception as error:  # noqa: BLE001
+                print(f"[LatentDecode:{role}] failed: {error!r}", flush=True)
+        return RoleCall(
+            role=role,
+            prompt=user_prompt,
+            image_labels=image_labels,
+            reasoning=decoded_debug,
+            final_outputs=("<carried-in-latent-state>",),
+            format_repairs=0,
+            physical_calls=1,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+
+    def decode_plan_targets(self, question: str) -> tuple[str, str] | None:
+        """Planner emits the x5/x20 evidence descriptors as text (clone decode).
+
+        VLMAS_NAV_QUERY_FROM_PLAN support: the latent Planner state (thumbnail +
+        question already written) is decoded on a deep copy for two short
+        morphology descriptors; the shared KV is untouched. Returns None on
+        any parse failure so callers fall back to the fixed plan text.
+        """
+        import json as _json
+        import re as _re
+        prompt = (
+            "Based on the thumbnail and the question, write two retrieval "
+            "descriptions for a frozen image search tool: what tissue appearance "
+            "to look for at x5 (architecture) and what to look for at x20 "
+            "(cellular detail). Name tissue appearance, not locations. Do not "
+            "answer the question. Output ONLY JSON with keys overview_target "
+            "and detail_target."
+        )
+        try:
+            raw = self._backend.decode_on_clone(
+                self._state,
+                system="You are the Planner. Emit search descriptors only.",
+                prompt=prompt,
+                max_new_tokens=120,
+                json_prefix='{"overview_target": "',
+            )
+        except Exception as error:  # noqa: BLE001
+            print(f"[PlanTargets] decode failed: {error!r}", flush=True)
+            return None
+        text = '{"overview_target": "' + raw
+        text = text[: text.find("}") + 1] if "}" in text else text + '"}'
+        try:
+            obj = _json.loads(text)
+        except ValueError:
+            m = _re.search(r'"overview_target"\s*:\s*"([^"]*)".*?"detail_target"\s*:\s*"([^"]*)"', text, _re.S)
+            if not m:
+                print(f"[PlanTargets] unparseable: {raw[:120]!r}", flush=True)
+                return None
+            obj = {"overview_target": m.group(1), "detail_target": m.group(2)}
+        ov = str(obj.get("overview_target", "")).strip()
+        dt = str(obj.get("detail_target", "")).strip()
+        if not ov or not dt:
+            return None
+        print(f"[PlanTargets] x5={ov[:80]!r} x20={dt[:80]!r}", flush=True)
+        return ov, dt
+
+    def generate_json(
+        self,
+        *,
+        role: str,
+        images: tuple[Image.Image, ...],
+        image_labels: tuple[str, ...],
+        system_prompt: str,
+        user_prompt: str,
+        output_adapter: TypeAdapter[OutputT],
+        final_tokens: int,
+        thinking_tokens: int = 1_024,
+        json_schema: str | None = None,
+        raw_semantic_validator: Callable[[str], str | None] | None = None,
+        semantic_validator: Callable[[OutputT], str | None] | None = None,
+        semantic_failure_code: FailureCode = FailureCode.MODEL_OUTPUT,
+        fallback_factory: FallbackFactory[OutputT] | None = None,
+        fallback_on_parse_failure: bool = False,
+    ) -> ParsedRoleCall[OutputT]:
+        """Decode only Navigator tool JSON or the terminal Answerer JSON."""
+        _ = thinking_tokens
+        append_elapsed = 0.0
+        match role:
+            case "navigator":
+                # Mirror upstream LatentMAS framing (Critic/Refiner/Judger): tell the
+                # latent-consuming Navigator that its plan arrives in latent KV format
+                # and may hold irrelevant detail — instead of silently dropping the line.
+                transport_prompt = announce_latent_upstream(
+                    user_prompt,
+                    prefix="Validated evidence plan: ",
+                    note="The evidence plan is provided in latent KV representation "
+                    "format; it may contain irrelevant detail, so use only what helps "
+                    "and do not restate it.",
+                    stage=role,
+                )
+                if self._retain_navigator_kv:
+                    audit = self.append_only(
+                        role=role,
+                        images=images,
+                        image_labels=image_labels,
+                        system_prompt=system_prompt,
+                        user_prompt=transport_prompt,
+                    )
+                    active_state = self._state
+                else:
+                    started = time.perf_counter()
+                    active_state = self._backend.branch_multimodal_latent(
+                        self._state,
+                        stage=role,
+                        images=images,
+                        system=system_prompt,
+                        prompt=transport_prompt,
+                        latent_steps=self._latent_steps,
+                    )
+                    if active_state.cache_length > self._max_model_len:
+                        raise PipelineFailure(
+                            code=FailureCode.MODEL_EXECUTION,
+                            stage=role,
+                            detail=(
+                                "latent state exceeds the fixed context limit: "
+                                f"{active_state.cache_length} > {self._max_model_len}"
+                            ),
+                        )
+                    audit = RoleCall(
+                        role=role,
+                        prompt=transport_prompt,
+                        image_labels=image_labels,
+                        reasoning="",
+                        final_outputs=("<isolated-from-latent-state>",),
+                        format_repairs=0,
+                        physical_calls=1,
+                        elapsed_seconds=time.perf_counter() - started,
+                    )
+                append_elapsed = audit.elapsed_seconds
+                consume_state = False
+                prefix_calls = audit.physical_calls
+                record_labels = audit.image_labels
+                audit_prompt = transport_prompt
+                repair_prompt = transport_prompt
+            case "navigator_detail":
+                import os as _os
+                if _os.environ.get("VLMAS_NAV_DETAIL_APPEND", "") == "1":
+                    # Continuous-KV variant: the x5 observations and this hop's
+                    # prompt are appended to the SHARED cache as a latent block
+                    # (exactly like the Navigator under --navigator-kv), so the
+                    # Reasoner/Answerer inherit them instead of a throwaway
+                    # branch. The search bank then carries only the x20 crops.
+                    audit = self.append_only(
+                        role=role,
+                        images=images,
+                        image_labels=image_labels,
+                        system_prompt=system_prompt,
+                        user_prompt=user_prompt,
+                    )
+                    active_state = self._state
+                    append_elapsed = audit.elapsed_seconds
+                    consume_state = False
+                    prefix_calls = audit.physical_calls
+                    record_labels = audit.image_labels
+                    audit_prompt = user_prompt
+                    repair_prompt = user_prompt
+                else:
+                    # VLMAS_NAV_TWOHOP hop-2: a self-contained per-anchor x20 pick.
+                    # Decode on an isolated branch so the extra crop/grid images never
+                    # enter the shared cache — the chosen patches arrive later through
+                    # the evidence round like any other patch.
+                    started = time.perf_counter()
+                    active_state = self._backend.branch_multimodal_latent(
+                        self._state,
+                        stage=role,
+                        images=images,
+                        system=system_prompt,
+                        prompt=user_prompt,
+                        latent_steps=0,
+                    )
+                    if active_state.cache_length > self._max_model_len:
+                        raise PipelineFailure(
+                            code=FailureCode.MODEL_EXECUTION,
+                            stage=role,
+                            detail=(
+                                "latent state exceeds the fixed context limit: "
+                                f"{active_state.cache_length} > {self._max_model_len}"
+                            ),
+                        )
+                    append_elapsed = time.perf_counter() - started
+                    consume_state = False
+                    prefix_calls = 1
+                    record_labels = image_labels
+                    audit_prompt = user_prompt
+                    repair_prompt = user_prompt
+            case "answerer":
+                # The final Answerer consumes the already accumulated cache. Its
+                # prompt is prefilled as normal text by the terminal decode, rather
+                # than being converted into another latent-agent block.
+                active_state = self._state
+                consume_state = True
+                prefix_calls = 0
+                record_labels: tuple[str, ...] = ()
+                audit_prompt = user_prompt
+                repair_prompt = user_prompt
+            case unsupported:
+                raise PipelineFailure(
+                    code=FailureCode.MODEL_OUTPUT,
+                    stage=unsupported,
+                    detail="latent OnePass only permits navigator or answerer JSON",
+                )
+        decoded = self._decoder.decode_json(
+            state=active_state,
+            role=role,
+            # Both supported roles append their full prompt immediately above;
+            # decoding must continue from that assistant boundary, not replay it.
+            system=system_prompt,
+            prompt=repair_prompt,
+            repair_prompt=repair_prompt,
+            audit_prompt=audit_prompt,
+            # VLMAS_NAV_FORCED_PREFIX=1 (opt-in, backbone-agnostic): force the
+            # navigator decode to start inside the required object so format
+            # drifters (e.g. Lingshu-I candidate-list echo) must emit ids, not
+            # re-open the envelope. Off keeps the historical "{" byte-identical.
+            json_prefix=(
+                '{"root_ids": ['
+                if role == "navigator"
+                and os.environ.get("VLMAS_NAV_FORCED_PREFIX") == "1"
+                else "{"
+            ),
+            json_schema=json_schema,
+            consume_state=consume_state,
+            output_adapter=output_adapter,
+            final_tokens=final_tokens,
+            raw_semantic_validator=raw_semantic_validator,
+            semantic_validator=semantic_validator,
+            semantic_failure_code=semantic_failure_code,
+            fallback_factory=fallback_factory,
+            fallback_on_parse_failure=fallback_on_parse_failure,
+        )
+        return ParsedRoleCall(
+            value=decoded.value,
+            record=decoded.record.model_copy(
+                update={
+                    "image_labels": record_labels,
+                    "physical_calls": prefix_calls + decoded.record.physical_calls,
+                    "elapsed_seconds": append_elapsed + decoded.record.elapsed_seconds,
+                }
+            ),
+        )
+
+    def release(self) -> None:
+        """Release the per-case KV once the terminal answer is persisted."""
+        self._backend.release(self._state)
+
+    def generate_final_text(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        final_tokens: int,
+        terminal_prefix: str | None = "<answer>",
+        json_schema: str | None = None,
+    ) -> RoleCall:
+        """Generate the final answer directly from the accumulated latent cache."""
+        started = time.perf_counter()
+        # C2 Receiver-Side Latent Deliberation (VLMAS_ANSWERER_LATENT_STEPS=k):
+        # give the role that actually reads the visual KV its own latent steps
+        # -- same append machinery as the Reasoner, no images -- once per case
+        # (format-repair re-decodes reuse the deliberated state). Total budget
+        # is kept by lowering VLMAS_REASONER_LATENT_STEPS. Off = unchanged.
+        import os as _os
+        answerer_steps = int(_os.environ.get("VLMAS_ANSWERER_LATENT_STEPS", "0") or 0)
+        # 0915 VLMAS_ANSWERER_BOUNDARY=1: text-only boundary turn with ZERO latent steps
+        # (LatentMAS-faithful: the answering agent runs no latent; this only restores the
+        # 0717 structure "image turn -> text-only turn -> final decode").
+        boundary_only = (
+            answerer_steps <= 0
+            and _os.environ.get("VLMAS_ANSWERER_BOUNDARY", "").strip() == "1"
+        )
+        if (answerer_steps > 0 or boundary_only) and getattr(
+            self, "_answerer_latent_state_id", None
+        ) != id(self._state):
+            self._state = self._backend.append_multimodal_latent(
+                self._state,
+                stage="answerer_latent",
+                images=(),
+                system=system_prompt,
+                prompt=(
+                    ("The evidence review for this question is complete; the final "
+                     "answer follows in the next turn. Question: " + user_prompt[:300])
+                    if boundary_only
+                    else ("Before answering, deliberate over the visual evidence "
+                          "already in context for this question: " + user_prompt[:600])
+                ),
+                latent_steps=max(0, answerer_steps),
+            )
+            self._answerer_latent_state_id = id(self._state)
+            print(f"[AnswererLatent] {max(0, answerer_steps)} latent steps appended "
+                  f"(boundary_only={boundary_only}, cache {self._state.cache_length})",
+                  flush=True)
+        # A tag protocol teacher-forces "<answer>". The boxed protocol keeps this
+        # unset so the model can emit the 0731 native-hybrid free-text readout.
+        # Keep the accumulated inter-agent state as an immutable branch point.
+        # ``transformers.generate`` may extend a mutable DynamicCache in place;
+        # decoding on a clone prevents a failed long Judger readout from poisoning
+        # a format-repair attempt that must reconsider the same latent evidence.
+        raw = self._backend.decode_in_place(
+            deepcopy(self._state),
+            system=system_prompt,
+            prompt=user_prompt,
+            max_new_tokens=final_tokens,
+            json_prefix=terminal_prefix,
+            json_schema=json_schema,
+        )
+        return RoleCall(
+            role="answerer",
+            prompt=user_prompt,
+            image_labels=(),
+            reasoning="",
+            final_outputs=(raw,),
+            format_repairs=0,
+            physical_calls=1,
+            elapsed_seconds=time.perf_counter() - started,
+        )
+
+
+def fixed_patch_plan(
+    question: str, *, patch_budget: Literal[8, 12, 25]
+) -> EvidencePlan:
+    """Supply deterministic multi-scale tool metadata, not planner prose."""
+    if patch_budget == 8:
+        overview_count, detail_count, anchor_count = 3, 5, 2
+    elif patch_budget == 12:
+        overview_count, detail_count, anchor_count = 4, 8, 4
+    else:
+        overview_count, detail_count, anchor_count = 5, 20, 5
+    return EvidencePlan.model_validate(
+        {
+            "question_focus": question[:240],
+            "needed_visual_information": ("carried in latent planner state",),
+            "thumbnail_observations": (),
+            "search_instruction": "use the preceding latent planner state",
+            "success_criteria": (
+                f"obtain {overview_count} x5 and {detail_count} x20 tissue patches",
+            ),
+            "detail_trigger": "fixed OnePass multi-scale allocation",
+            "scale_plan": {
+                "overview_target": "latent-planned x5 architecture",
+                "overview_patch_count": overview_count,
+                "detail_target": "latent-planned x20 cellular detail",
+                "detail_patch_count": detail_count,
+                "detail_anchor_count": anchor_count,
+                "scale_success_criteria": (
+                    f"all {patch_budget} patches materialized",
+                ),
+                "patch_budget": patch_budget,
+            },
+        }
+    )
+
+
+def fixed_eight_patch_plan(question: str) -> EvidencePlan:
+    """Supply the original three-x5 plus five-x20 allocation."""
+    return fixed_patch_plan(question, patch_budget=8)
