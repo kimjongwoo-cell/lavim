@@ -22,7 +22,7 @@ pip install torch torchvision transformers accelerate \
   qwen-vl-utils numpy einops safetensors huggingface_hub
 ```
 
-For the exact environment used during development, install the pinned package set from the source workspace's `requirements.txt` (the full environment includes CUDA/FlashAttention-related packages).
+For the exact environment used during development, run `python -m pip install -r requirements.txt`. The pinned file includes CUDA/FlashAttention-related packages, so match it to the target machine's CUDA driver.
 
 ## 2. Download the Qwen3-VL model
 
@@ -70,7 +70,7 @@ datasets/MultiPathQA/ready_wsivqa/full_no_panda/
 └── thumbnails_sanitized/      # prepared thumbnails, if your benchmark snapshot provides them
 ```
 
-The JSON files must use the slide IDs referenced by the downloaded WSI files. The repository does not contain a public one-command conversion from raw GIANT downloads to every `ready_wsivqa` snapshot; keep the prepared snapshot outside Git and point the runner at it.
+Prepared benchmark JSON files are included under `data/ready_wsivqa/full_no_panda/`. Copy or symlink that directory to the runner's `DATA` path. The large WSI files are not committed; download them with GIANT and place or symlink them under `DATA/slides/`. JSON slide IDs must match the downloaded WSI filenames.
 
 ## 4. Configure paths
 
