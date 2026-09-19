@@ -1,0 +1,17 @@
+{
+  "pilot_id": "wsivqa-api-hf-vlmas-v1",
+  "parent_contract": "config/wsivqa_fair_v2.json",
+  "purpose": "Compare identical strict-v2 Vision-TextMAS agent graphs on local vLLM API and direct HuggingFace Transformers inference before selecting the full-run engine.",
+  "indices": [0, 7, 29, 34, 58, 63, 88, 97, 120, 124, 148, 156, 180, 186, 213, 221, 243, 250, 271, 278, 300, 312, 329, 341, 367, 370, 394, 398, 424, 429, 454, 464, 487, 493, 519, 522, 548, 552, 572, 589, 612, 613, 642, 644, 671, 675, 700, 705],
+  "strata": {
+    "mcq": 24,
+    "open_ended": 24
+  },
+  "acceptance_gate": {
+    "minimum_completed_per_backend": 48,
+    "maximum_absolute_mcq_accuracy_delta": 0.05,
+    "maximum_absolute_open_token_f1_delta": 0.05,
+    "decision_if_pass": "retain local vLLM API for the 735-case strict-v2 VL-MAS completion",
+    "decision_if_fail": "use direct HuggingFace inference for all compared methods before reporting a fair method comparison"
+  }
+}

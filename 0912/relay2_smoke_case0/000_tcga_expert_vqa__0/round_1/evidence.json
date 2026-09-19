@@ -1,0 +1,222 @@
+{
+  "round_number": 1,
+  "action": "INITIAL",
+  "patches": [
+    {
+      "patch_id": "R1-P1",
+      "round_number": 1,
+      "rank": 1,
+      "action": "INITIAL",
+      "magnification": 5,
+      "box": {
+        "x": 27888,
+        "y": 4642,
+        "width": 4096,
+        "height": 4096
+      },
+      "root_id": 4,
+      "source_x5_anchor": "R1-P1",
+      "candidate_id": 19,
+      "tissue_fraction": 0.471435546875,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P1.png"
+    },
+    {
+      "patch_id": "R1-P2",
+      "round_number": 1,
+      "rank": 2,
+      "action": "INITIAL",
+      "magnification": 5,
+      "box": {
+        "x": 5200,
+        "y": 13381,
+        "width": 4096,
+        "height": 4096
+      },
+      "root_id": 7,
+      "source_x5_anchor": "R1-P2",
+      "candidate_id": 24,
+      "tissue_fraction": 0.47369384765625,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P2.png"
+    },
+    {
+      "patch_id": "R1-P3",
+      "round_number": 1,
+      "rank": 3,
+      "action": "INITIAL",
+      "magnification": 5,
+      "box": {
+        "x": 27888,
+        "y": 10286,
+        "width": 4096,
+        "height": 4096
+      },
+      "root_id": 10,
+      "source_x5_anchor": "R1-P3",
+      "candidate_id": 7,
+      "tissue_fraction": 0.99981689453125,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P3.png"
+    },
+    {
+      "patch_id": "R1-P4",
+      "round_number": 1,
+      "rank": 4,
+      "action": "INITIAL",
+      "magnification": 5,
+      "box": {
+        "x": 5200,
+        "y": 22120,
+        "width": 4096,
+        "height": 4096
+      },
+      "root_id": 13,
+      "source_x5_anchor": "R1-P4",
+      "candidate_id": 24,
+      "tissue_fraction": 0.6990966796875,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P4.png"
+    },
+    {
+      "patch_id": "R1-P5",
+      "round_number": 1,
+      "rank": 5,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 27888,
+        "y": 6690,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 4,
+      "source_x5_anchor": "R1-P1",
+      "candidate_id": 9,
+      "tissue_fraction": 0.904052734375,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P5.png"
+    },
+    {
+      "patch_id": "R1-P6",
+      "round_number": 1,
+      "rank": 6,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 7248,
+        "y": 13381,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 7,
+      "source_x5_anchor": "R1-P2",
+      "candidate_id": 3,
+      "tissue_fraction": 0.9185791015625,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P6.png"
+    },
+    {
+      "patch_id": "R1-P7",
+      "round_number": 1,
+      "rank": 7,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 29936,
+        "y": 10286,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 10,
+      "source_x5_anchor": "R1-P3",
+      "candidate_id": 3,
+      "tissue_fraction": 0.99749755859375,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P7.png"
+    },
+    {
+      "patch_id": "R1-P8",
+      "round_number": 1,
+      "rank": 8,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 8272,
+        "y": 22120,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 13,
+      "source_x5_anchor": "R1-P4",
+      "candidate_id": 4,
+      "tissue_fraction": 0.96240234375,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P8.png"
+    },
+    {
+      "patch_id": "R1-P9",
+      "round_number": 1,
+      "rank": 9,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 28912,
+        "y": 6690,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 4,
+      "source_x5_anchor": "R1-P1",
+      "candidate_id": 10,
+      "tissue_fraction": 0.99774169921875,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P9.png"
+    },
+    {
+      "patch_id": "R1-P10",
+      "round_number": 1,
+      "rank": 10,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 7248,
+        "y": 14405,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 7,
+      "source_x5_anchor": "R1-P2",
+      "candidate_id": 7,
+      "tissue_fraction": 0.6588134765625,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P10.png"
+    },
+    {
+      "patch_id": "R1-P11",
+      "round_number": 1,
+      "rank": 11,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 29936,
+        "y": 11310,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 10,
+      "source_x5_anchor": "R1-P3",
+      "candidate_id": 7,
+      "tissue_fraction": 0.9940185546875,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P11.png"
+    },
+    {
+      "patch_id": "R1-P12",
+      "round_number": 1,
+      "rank": 12,
+      "action": "INITIAL",
+      "magnification": 20,
+      "box": {
+        "x": 8272,
+        "y": 23144,
+        "width": 1024,
+        "height": 1024
+      },
+      "root_id": 13,
+      "source_x5_anchor": "R1-P4",
+      "candidate_id": 8,
+      "tissue_fraction": 0.9456787109375,
+      "image_path": "/tmp/latent_navigation_000_6_hqbo7a/round_1/R1-P12.png"
+    }
+  ]
+}

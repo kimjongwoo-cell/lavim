@@ -1,0 +1,17 @@
+[
+  {
+    "stage": "evidence_planner",
+    "added_tokens": 1229,
+    "latent_steps": 10
+  },
+  {
+    "stage": "navigator",
+    "added_tokens": 2251,
+    "latent_steps": 10
+  },
+  {
+    "stage": "reasoner",
+    "added_tokens": 4911,
+    "latent_steps": 10
+  }
+]

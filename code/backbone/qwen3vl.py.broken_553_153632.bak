@@ -1,0 +1,553 @@
+"""Qwen3-VL-4B-Thinking backbone for latent reasoning.
+
+Model structure:
+  model.model.visual          → Qwen3VLVisionModel (ViT)
+  model.model.language_model  → Qwen3VLTextModel
+    layers[i].self_attn       → Qwen3VLTextAttention (ALL 36 layers, full attention)
+
+All layers are full attention → clean KV cache for all layers.
+
+Vision merging (mirrors Qwen3VLModel.forward):
+  1. processor(images) → pixel_values, image_grid_thw
+  2. model.model.get_image_features(pixel_values, image_grid_thw) → image_embeds
+  3. embed_tokens(text_ids) → text_embeds
+  4. masked_scatter image_embeds into text_embeds at <|image_pad|> positions
+  5. compute_3d_position_ids() → position_ids (MRoPE)
+  6. language_model(inputs_embeds, position_ids, ...) → forward
+"""
+
+from __future__ import annotations
+
+import copy
+
+import torch
+import torch.nn as nn
+from PIL import Image
+from transformers import AutoProcessor, AutoModelForImageTextToText
+
+
+class Qwen3VLBackbone:
+    def __init__(
+        self,
+        model_path: str,
+        device: str = "cuda:0",
+        dtype: torch.dtype = torch.bfloat16,
+        realign_method: str = "wa",   # "wa" | "softmax"
+        realign_tau: float = 1.0,     # temperature for softmax method
+        instruct: bool = False,
+        mrope_pos: bool = True,       # use true MRoPE 3D positions (vs sequential)
+    ) -> None:
+        self.device = device
+        self.dtype  = dtype
+        self._realign_method = realign_method
+        self._realign_tau    = realign_tau
+        self.instruct = instruct
+        self.mrope_pos = mrope_pos
+        self._last_grid_thw = None
+
+        print(f"[Backbone] Loading {model_path} ...")
+        self.processor = AutoProcessor.from_pretrained(model_path)
+        self.model = AutoModelForImageTextToText.from_pretrained(
+            model_path, dtype=dtype, device_map=device,
+            attn_implementation="eager",  # required for output_attentions=True
+        )
+        self.model.eval()
+
+        self.vlm  = self.model.model          # Qwen3VLModel
+        self.lm   = self.vlm.language_model   # Qwen3VLTextModel
+        self.visual = self.vlm.visual         # Qwen3VLVisionModel
+
+        # All layers are full attention for Qwen3-VL
+        self.full_attn_indices: list[int] = list(range(len(self.lm.layers)))
+        print(f"[Backbone] Layers: {len(self.lm.layers)} (all full attention)")
+
+        # cache embeddings for realignment (both methods need them)
+        self._input_emb: torch.Tensor | None = None   # E [V, D]
+        self._output_emb: torch.Tensor | None = None  # U [V, D]
+        # W_a specific
+        self._realign_matrix: torch.Tensor | None = None
+        self._realign_target_norm: torch.Tensor | None = None
+        self._build_realign_matrix()
+        print(f"[Backbone] Realign method: {realign_method}"
+              + (f", tau={realign_tau}" if realign_method == "softmax" else ""))
+
+    # ── latent realignment (LatentMAS style) ──────────────────────────────────
+    def _build_realign_matrix(self) -> None:
+        """Cache embeddings and build W_a (used only when realign_method='wa')."""
+        dev = torch.device(self.device)
+
+        input_emb  = self.model.get_input_embeddings().weight.detach().float()
+        output_emb = self.model.get_output_embeddings().weight.detach().float()
+
+        # cache for softmax method
+        self._input_emb  = input_emb.to(dev)   # E [V, D]
+        self._output_emb = output_emb.to(dev)  # U [V, D]
+
+        # W_a (least squares)
+        gram = output_emb.T @ output_emb
+        reg  = 1e-5 * torch.eye(gram.shape[0], device=gram.device, dtype=gram.dtype)
+        rhs  = output_emb.T @ input_emb
+        matrix = torch.linalg.solve(gram + reg, rhs)
+        target_norm = input_emb.norm(dim=1).mean()
+
+        self._realign_matrix      = matrix.to(device=dev, dtype=torch.float32)
+        self._realign_target_norm = target_norm.to(device=dev, dtype=torch.float32)
+        print(f"[Backbone] W_a built: {tuple(matrix.shape)}, "
+              f"target_norm={target_norm:.4f}")
+
+    def _apply_realign(self, hidden: torch.Tensor) -> torch.Tensor:
+        """Dispatch to W_a or softmax realignment.  hidden: [B, 1, D]"""
+        if self._realign_method == "softmax":
+            return self._apply_realign_softmax(hidden)
+        return self._apply_realign_wa(hidden)
+
+    def _apply_realign_wa(self, hidden: torch.Tensor) -> torch.Tensor:
+        """W_a least-squares map.  hidden: [B, 1, D] → [B, 1, D]"""
+        orig_dtype = hidden.dtype
+        h = hidden.float().squeeze(1)                          # [B, D]
+        aligned = h @ self._realign_matrix                     # [B, D]
+        norm = aligned.norm(dim=-1, keepdim=True).clamp_min(1e-6)
+        aligned = aligned * (self._realign_target_norm / norm)
+        return aligned.to(orig_dtype).unsqueeze(1)
+
+    def _apply_realign_softmax(self, hidden: torch.Tensor) -> torch.Tensor:
+        """Softmax realignment:  z̃_t = E^T · softmax(U z_t / τ)
+
+        Result is a convex combination of input embeddings (lies in their
+        convex hull by construction). Training-free, uses U and E only.
+
+        hidden: [B, 1, D] → [B, 1, D]
+        """
+        orig_dtype = hidden.dtype
+        h = hidden.float().squeeze(1)          # [B, D]
+        U = self._output_emb                   # [V, D]
+        E = self._input_emb                    # [V, D]
+
+        logits  = h @ U.T / self._realign_tau  # [B, V]
+        p       = torch.softmax(logits, dim=-1) # [B, V]  (on embedding simplex)
+        z_tilde = p @ E                         # [B, D]
+
+        return z_tilde.to(orig_dtype).unsqueeze(1)  # [B, 1, D]
+
+    # ── vision encoding ────────────────────────────────────────────────────────
+    @torch.no_grad()
+    def encode_patches(self, images: list[Image.Image]) -> tuple[torch.Tensor, int]:
+        """Encode patch images → visual token embeddings.
+
+        Uses Qwen3VLModel.get_image_features() which runs:
+          pixel_values → ViT → pooler → merged [n_vis_total, hidden]
+
+        Returns:
+            visual_embeds : [n_patches * n_vis_per_patch, hidden]
+            n_vis_per_patch: visual tokens per patch image
+        """
+        content = [{"type": "image", "image": img} for img in images]
+        content.append({"type": "text", "text": "."})
+        msgs = [{"role": "user", "content": content}]
+
+        text = self.processor.apply_chat_template(
+            msgs, tokenize=False, add_generation_prompt=False,
+            enable_thinking=False,
+        )
+        inputs = self.processor(
+            text=[text], images=images, return_tensors="pt"
+        )
+        pv  = inputs["pixel_values"].to(self.device, dtype=self.dtype)
+        thw = inputs["image_grid_thw"].to(self.device)
+
+        img_out = self.vlm.get_image_features(pv, thw, return_dict=True)
+        # pooler_output: list of per-image tensors [n_vis_i, hidden]
+        vis_feat = torch.cat(img_out.pooler_output, dim=0)  # [total_vis, hidden]
+
+        n_vis_per_patch = vis_feat.shape[0] // len(images)
+        # remember the per-patch grids so position ids can use true MRoPE coords
+        self._last_grid_thw = thw  # [n_patches, 3] (t,h,w) raw grid
+        return vis_feat, n_vis_per_patch, thw
+
+    # ── MRoPE 3D position ids ────────────────────────────────────────────────────
+    def vision_coords(
+        self,
+        grids: torch.Tensor | None,
+        start: int = 0,
+    ) -> tuple[torch.Tensor, int]:
+        """Per-visual-token MRoPE coords for a [vis_1..vis_k] layout.
+
+        Replicates get_rope_index's per-image logic: each image's tokens get
+        (t,h,w) grid coordinates offset by the running cursor, and the cursor
+        advances by the *compressed* span max(h,w)//merge (not the token count).
+
+        Returns (coords [3, n_vis], next_cursor). Token i's coordinate is
+        coords[:, i] — pruning simply keeps a subset of columns, so positions
+        for a kept subset are positions_from_coords(coords[:, kept_idx], ...).
+        """
+        sms = self.model.config.vision_config.spatial_merge_size
+        cur = start
+        pieces = []
+        if grids is not None:
+            for g in grids:  # g: (t,h,w)
+                vp = self.vlm.get_vision_position_ids(cur, g, 1, sms, device=self.device)
+                pieces.append(vp)  # [3, n_vis_i]
+                cur += max(int(g[1]), int(g[2])) // sms
+        if pieces:
+            coords = torch.cat(pieces, dim=1)  # [3, n_vis]
+        else:
+            coords = torch.zeros(3, 0, dtype=torch.long, device=self.device)
+        return coords, cur
+
+    def positions_from_coords(
+        self,
+        vis_coords: torch.Tensor,   # [3, n_vis] (possibly a kept subset)
+        n_text: int,
+        text_start: int,
+    ) -> tuple[torch.Tensor, int]:
+        """Assemble [3,1,seq] position ids from per-token visual coords plus
+        n_text trailing text tokens (all three axes equal, from text_start)."""
+        pieces = [vis_coords]
+        cur = text_start
+        if n_text > 0:
+            t = torch.arange(n_text, device=self.device).view(1, -1).expand(3, -1) + cur
+            pieces.append(t)
+            cur += n_text
+        pos = torch.cat(pieces, dim=1).unsqueeze(1)  # [3,1,seq]
+        return pos, cur
+
+    def build_mrope_positions(
+        self,
+        grids: torch.Tensor | None,
+        n_text: int,
+        start: int = 0,
+    ) -> tuple[torch.Tensor, int]:
+        """Convenience wrapper: full-patch [vis|text] positions.
+
+        Equivalent to keeping *all* visual tokens. Pruning paths should instead
+        use vision_coords() + positions_from_coords() with a kept subset.
+
+        Returns (position_ids [3,1,seq], next_cursor).
+        """
+        vis_coords, vcur = self.vision_coords(grids, start=start)
+        return self.positions_from_coords(vis_coords, n_text, vcur)
+
+    def _text_positions(self, n: int, start: int) -> torch.Tensor:
+        """[3,1,n] MRoPE positions for n text-like tokens, all axes equal."""
+        t = torch.arange(start, start + n, device=self.device).view(1, -1).expand(3, -1)
+        return t.unsqueeze(1)  # [3,1,n]
+
+    # ── text embedding ─────────────────────────────────────────────────────────
+    @torch.no_grad()
+    def embed_text(
+        self,
+        text: str,
+        system_prompt: str | None = None,
+        enable_thinking: bool = False,
+    ) -> torch.Tensor:
+        """Tokenise and embed text. Returns [n_q, hidden].
+
+        Args:
+            text          : user message content
+            system_prompt : optional system role description (agent role)
+            enable_thinking: whether to open <think> block (for Reasoner/Refiner)
+        """
+        msgs = []
+        if system_prompt:
+            msgs.append({"role": "system", "content": system_prompt})
+        msgs.append({"role": "user", "content": text})
+
+        if self.instruct:
+            prompt = self.processor.apply_chat_template(
+                msgs, tokenize=False, add_generation_prompt=True,
+                enable_thinking=False,
+            )
+        else:
+            prompt = self.processor.apply_chat_template(
+                msgs, tokenize=False, add_generation_prompt=True,
+            )
+            # Thinking model always appends <think>\n; close it if thinking is disabled
+            if not enable_thinking:
+                prompt = prompt + "\n</think>\n\n"
+
+        ids = self.processor.tokenizer(
+            prompt, return_tensors="pt", add_special_tokens=False,
+        )["input_ids"].to(self.device)
+        return self.lm.embed_tokens(ids).squeeze(0)  # [n_q, hidden]
+
+    # ── position ids for latent tokens ────────────────────────────────────────
+    def _make_position_ids(
+        self, seq_len: int, past_len: int = 0
+    ) -> torch.Tensor:
+        """Simple 1D position ids for text-only or latent tokens.
+        Shape: [3, 1, seq_len] (MRoPE format: temporal, height, width all same).
+        """
+        pos = torch.arange(past_len, past_len + seq_len,
+                           device=self.device).unsqueeze(0)  # [1, seq_len]
+        return pos.unsqueeze(0).expand(3, 1, seq_len)         # [3, 1, seq_len]
+
+    # ── latent step loop ───────────────────────────────────────────────────────
+    @torch.no_grad()
+    def forward_with_latent_steps(
+        self,
+        visual_embeds: torch.Tensor,   # [n_vis, hidden]
+        text_embeds:   torch.Tensor,   # [n_q,  hidden]
+        m: int,
+        l_mid_layers: list[int],
+        past_kv=None,                  # carried-over KV from a prior iteration
+        past_len: int = 0,             # current seq length already in past_kv
+        grids: torch.Tensor | None = None,   # per-patch (t,h,w) for MRoPE
+        past_pos_cursor: int = 0,      # max MRoPE position+1 already in past_kv
+    ) -> dict:
+        """Prefill [vis | text], then run m latent steps.
+
+        If past_kv is provided, the new [vis | text] tokens are appended after
+        the existing KV, so reasoning continues from prior iterations' context.
+
+        Position ids: with self.mrope_pos, visual tokens get true 3D MRoPE
+        (h,w) grid coordinates and the rope cursor advances by the *compressed*
+        span (not token count); otherwise falls back to sequential ids. The
+        rope cursor is tracked separately from the cache token count (past_len).
+
+        Returns the usual keys plus:
+          past_len   : total seq length (token count) after this call
+          pos_cursor : max MRoPE position+1 after this call (for continuation)
+        """
+        n_vis = visual_embeds.shape[0]
+        n_q   = text_embeds.shape[0]
+        seq   = n_vis + n_q
+
+        # column offset of this iteration's visual tokens within the full
+        # attention matrix (0 when no past, else right after carried-over KV)
+        vis_col0 = past_len
+
+        input_embeds = torch.cat(
+            [visual_embeds.unsqueeze(0), text_embeds.unsqueeze(0)], dim=1
+        )  # [1, seq, hidden]
+
+        if grids is None:
+            grids = self._last_grid_thw
+
+        # position_ids for prefill
+        if self.mrope_pos and grids is not None:
+            # keep per-token visual coords so future pruning can re-anchor a
+            # kept subset without recomputing from grids
+            vis_coords, vcur = self.vision_coords(grids, start=past_pos_cursor)
+            pos_ids, cursor = self.positions_from_coords(vis_coords, n_q, vcur)
+        else:
+            vis_coords = None
+            pos_ids = self._make_position_ids(seq, past_len=past_len)  # sequential
+            cursor = past_len + seq
+
+        # ── prefill ────────────────────────────────────────────────────────────
+        out = self.lm(
+            inputs_embeds=input_embeds,
+            position_ids=pos_ids,
+            past_key_values=past_kv,
+            use_cache=True,
+            output_attentions=True,
+            output_hidden_states=True,
+        )
+        past_kv     = out.past_key_values
+        last_hidden = out.hidden_states[-1][:, -1:, :]  # [1, 1, hidden]
+
+        # query-to-vision attention from prefill
+        # attn rows are this iteration's tokens; cols span [0, past_len+seq).
+        # this iteration's question rows: [vis_col0+n_vis : vis_col0+seq]
+        # this iteration's visual cols  : [vis_col0 : vis_col0+n_vis]
+        query_to_vision_attn: dict[int, torch.Tensor] = {}
+        for li in l_mid_layers:
+            a = out.attentions[li]
+            if a is not None:
+                q2v = a[0, :, n_vis:, vis_col0:vis_col0 + n_vis]  # [n_heads, n_q, n_vis]
+                query_to_vision_attn[li] = q2v.cpu()
+
+        # ── latent steps ───────────────────────────────────────────────────────
+        latent_trajectory: list[torch.Tensor] = []
+        l2v_lists: dict[int, list[torch.Tensor]] = {li: [] for li in l_mid_layers}
+
+        for step in range(m):
+            latent_embed = self._apply_realign(last_hidden)  # [1, 1, hidden]
+            if self.mrope_pos and grids is not None:
+                pos_ids_step = self._text_positions(1, start=cursor + step)
+            else:
+                pos_ids_step = self._make_position_ids(1, past_len=past_len + seq + step)
+
+            out = self.lm(
+                inputs_embeds=latent_embed,
+                position_ids=pos_ids_step,
+                past_key_values=past_kv,
+                use_cache=True,
+                output_attentions=True,
+                output_hidden_states=True,
+            )
+            past_kv     = out.past_key_values
+            last_hidden = out.hidden_states[-1][:, -1:, :]
+            latent_trajectory.append(last_hidden.squeeze().cpu())
+
+            # latent-to-vision attention
+            # attn: [1, n_heads, 1, past_len+seq+step+1]
+            for li in l_mid_layers:
+                a = out.attentions[li]
+                if a is not None:
+                    l2v = a[0, :, 0, vis_col0:vis_col0 + n_vis]   # [n_heads, n_vis]
+                    l2v_lists[li].append(l2v.cpu())
+
+        # stack: [m, n_heads, n_vis]
+        latent_to_vision_attn: dict[int, torch.Tensor] = {
+            li: torch.stack(lst, dim=0)
+            for li, lst in l2v_lists.items() if lst
+        }
+
+        # ── extract KV for agent transfer ──────────────────────────────────────
+        full_attn_kv = self._extract_full_attn_kv(past_kv, l_mid_layers)
+
+        return {
+            "past_key_values":        past_kv,
+            "latent_trajectory":      latent_trajectory,
+            "latent_to_vision_attn":  latent_to_vision_attn,
+            "query_to_vision_attn":   query_to_vision_attn,
+            "full_attn_kv":           full_attn_kv,
+            "past_len":               past_len + seq + m,
+            "pos_cursor":             cursor + m,
+            "vis_coords":             (vis_coords.cpu() if vis_coords is not None else None),
+            # span types of the columns this call appended: visual | prompt | latent
+            "spans":                  [s for s in (("V", n_vis), ("P", n_q), ("L", m)) if s[1] > 0],
+        }
+
+    @torch.no_grad()
+    def continue_with_latent_steps(
+        self,
+        text_embeds: torch.Tensor,   # [n_t, hidden]  new agent prompt
+        past_kv,                     # past_key_values from previous agent
+        past_len: int,               # current sequence length (token count) in past_kv
+        m: int,
+        l_mid_layers: list[int],
+        past_pos_cursor: int | None = None,  # max MRoPE position+1 in past_kv
+    ) -> dict:
+        """Append a new prompt to existing KV and run m more latent steps.
+
+        Used by Refiner to continue reasoning from Reasoner's KV. The new text
+        and latent tokens are positioned from the *rope cursor* (max position+1),
+        not the token count, so they stay adjacent to the (compressed) visual
+        positions instead of being pushed thousands of steps away.
+
+        Returns the usual keys plus pos_cursor.
+        """
+        n_t = text_embeds.shape[0]
+        use_mrope = self.mrope_pos and past_pos_cursor is not None
+        cursor = past_pos_cursor if use_mrope else past_len
+
+        # ── prefill new prompt on top of past_kv ──────────────────────────────
+        if use_mrope:
+            pos_ids = self._text_positions(n_t, start=cursor)
+        else:
+            pos_ids = self._make_position_ids(n_t, past_len=past_len)
+
+        out = self.lm(
+            inputs_embeds=text_embeds.unsqueeze(0),
+            position_ids=pos_ids,
+            past_key_values=past_kv,
+            use_cache=True,
+            output_attentions=False,
+            output_hidden_states=True,
+        )
+        past_kv     = out.past_key_values
+        last_hidden = out.hidden_states[-1][:, -1:, :]  # [1, 1, hidden]
+        past_len   += n_t
+        cursor     += n_t
+
+        # ── latent steps ───────────────────────────────────────────────────────
+        latent_trajectory: list[torch.Tensor] = []
+
+        for step in range(m):
+            latent_embed = self._apply_realign(last_hidden)  # [1, 1, hidden]
+            if use_mrope:
+                pos_ids_step = self._text_positions(1, start=cursor + step)
+            else:
+                pos_ids_step = self._make_position_ids(1, past_len=past_len + step)
+
+            out = self.lm(
+                inputs_embeds=latent_embed,
+                position_ids=pos_ids_step,
+                past_key_values=past_kv,
+                use_cache=True,
+                output_attentions=False,
+                output_hidden_states=True,
+            )
+            past_kv     = out.past_key_values
+            last_hidden = out.hidden_states[-1][:, -1:, :]
+            latent_trajectory.append(last_hidden.squeeze().cpu())
+
+        full_attn_kv = self._extract_full_attn_kv(past_kv, l_mid_layers)
+
+        return {
+            "past_key_values":    past_kv,
+            "latent_trajectory":  latent_trajectory,
+            "full_attn_kv":       full_attn_kv,
+            "past_len":           past_len + m,
+            "pos_cursor":         cursor + m,
+            # span types appended by this continuation: prompt | latent
+            "spans":              [s for s in (("P", n_t), ("L", m)) if s[1] > 0],
+        }
+
+    def _extract_full_attn_kv(
+        self,
+        past_kv,
+        l_mid_layers: list[int],
+    ) -> dict[int, tuple[torch.Tensor, torch.Tensor]]:
+        """Extract (K, V) tensors for full_attention layers (Refiner injection).
+
+        Qwen3-VL uses DynamicCache with .layers[i].keys / .layers[i].values API.
+        """
+        result: dict[int, tuple[torch.Tensor, torch.Tensor]] = {}
+        for li in l_mid_layers:
+            try:
+                if hasattr(past_kv, "layers"):
+                    # Qwen3-VL DynamicCache
+                    layer = past_kv.layers[li]
+                    K = layer.keys.cpu()
+                    V = layer.values.cpu()
+                elif hasattr(past_kv, "key_cache"):
+                    K = past_kv.key_cache[li].cpu()
+                    V = past_kv.value_cache[li].cpu()
+                else:
+                    K = past_kv[li][0].cpu()
+                    V = past_kv[li][1].cpu()
+                result[li] = (K, V)
+            except (IndexError, TypeError, AttributeError):
+                continue
+        return result
+
+    # ── span-aware KV pruning (LatentMAS-style retention, WSI-adapted) ──────────
+    @torch.no_grad()
+    def prune_kv(self, past_kv, span_map, keep_types):
+        """Keep only KV columns whose span type is in keep_types, dropping the
+        rest — a span-aware gather, NOT a tail-slice (visual evidence lives at
+        the front and must survive while prompt text in the middle is dropped).
+
+        span_map: ordered list of (type, n_cols) describing how the cache was
+        built, e.g. [("V",961),("P",30),("L",10),("P",24),("L",10)].
+
+        Returns (pruned_cache, new_token_count, filtered_span_map). The cache is
+        deep-copied so the caller's chain is untouched. pos_cursor is unchanged
+        by the caller: kept columns keep their baked-in RoPE phase, and new
+        tokens continue from the same rope cursor (holes in position are fine).
+        """
+        keep_idx: list[int] = []
+        new_map: list[tuple[str, int]] = []
+        col = 0
+        for t, n in span_map:
+            if t in keep_types:
+                keep_idx.extend(range(col, col + n))
+                new_map.append((t, n))
+            col += n
+
+        if len(keep_idx) == col:          # nothing dropped → no-op (e.g. full mode)
+            return past_kv, col, list(span_map)
+        if not keep_idx:                  # degenerate: keep at least nothing-dropped
+            return past_kv, col, list(span_map)
+
+        pruned = copy.deepcopy(past_kv)
+        idx = torch.tensor(keep_idx, device=self.device, dtype=torch.long)
+        layers = pruned.layers if hasattr(pruned, "layers") else None
+        if layers is not None:
+            for layer in layers:
+                layer.keys = layer.keys.index_select(2, idx).contiguous()
+                layer.values = layer.values.index_select(2, idx).contiguous()
+        return pruned, len(keep_idx), new_map

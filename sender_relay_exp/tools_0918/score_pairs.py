@@ -14,6 +14,8 @@ ARMS = {
     "glvr_rho_nf":      R / "nav4/glvr_rho_nf",
 }
 ARMS["glvr_rho_fast"] = R / "nav4/glvr_rho_fast"
+ARMS["vcdlp_rho"] = R / "nav4/vcdlp_rho"
+ARMS["rfnm_rho"] = R / "nav4/rfnm_rho"
 PAIRS = [tuple(x.split(":")) for x in os.environ.get("PAIRS", "nova_rho_latplan:latplan").split(",")]
 if os.environ.get("ARM_ROOT"):                     # every run named in PAIRS lives in ARM_ROOT/<name>
     ARMS = {a: Path(os.environ["ARM_ROOT"]) / a for p in PAIRS for a in p}

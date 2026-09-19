@@ -1,0 +1,17 @@
+{
+  "flops_total": 74376685301760.0,
+  "flops_prefill": 72898067570688.0,
+  "flops_decode": 1478617731072.0,
+  "prefill_tokens_total": 7964,
+  "decode_steps_total": 166,
+  "n_lm_forwards": 175,
+  "flops_reprefill_nocache": 7291285338562560.0,
+  "flops_prefill_nocache": 341275478611968.0,
+  "flops_decode_nocache": 6950009859950592.0,
+  "flops_carry_saving": 268377411041280.0,
+  "flops_decode_cache_saving": 6948531242219520.0,
+  "flops_total_saving": 7216908653260800.0,
+  "carry_saving_ratio": 0.7863952374569124,
+  "total_saving_ratio": 0.989799235409374,
+  "peak_gpu_mem_bytes": 14403718656
+}

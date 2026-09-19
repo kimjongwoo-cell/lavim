@@ -1,0 +1,66 @@
+General WSI-VQA Evaluation Report
+==================================
+
+[Dataset]
+- files: 1
+- rows loaded: 1
+- valid eval rows: 1
+- skipped without GT: 0
+- skipped without prediction: 0
+
+[Answer-Type Split]
+- MCQ/CLOSED: 0/1 = 0.00%
+- OPEN: 0/0 = 0.00%
+- TOTAL: 0.00%
+
+[MCQ Metrics]
+- mcq_accuracy: 0.00%
+- mcq_seq_accuracy: 0.00%
+- mcq_letter_accuracy: 0.00%
+
+[Open-Ended Metrics]
+- open_substring_accuracy: 0.00%
+- open_token_f1: N/A
+- open_token_precision: N/A
+- open_token_recall: N/A
+- open_BLEU_1: 0.0000
+- open_BLEU_2: 0.0000
+- open_BLEU_3: 0.0000
+- open_BLEU_4: 0.0000
+- open_METEOR: 0.0000
+- open_ROUGE_L: 0.0000
+  meaning: open_* metrics include OPEN rows only, excluding MCQ/CLOSED rows.
+
+[All Valid Rows Metrics]
+- normalized_exact_match: 0.00%
+- token_f1: 28.57%
+- token_precision: 25.00%
+- token_recall: 33.33%
+- all_BLEU_1: 0.2500
+- all_BLEU_2: 0.0000
+- all_BLEU_3: 0.0000
+- all_BLEU_4: 0.0000
+- all_METEOR: 0.1311
+- all_ROUGE_L: 0.2933
+  meaning: all_* metrics include every valid row, both MCQ/CLOSED and OPEN.
+
+[Primary COCO Scope]
+- metric_scope: both
+- primary BLEU_1: 0.0000
+- primary BLEU_4: 0.0000
+- primary METEOR: 0.0000
+- primary ROUGE_L: 0.0000
+
+[Inference Time]
+- total_inference_time_sec: 30.59
+- avg_inference_time_sec: 30.59
+
+[Token]
+- total_output_tokens: 2802
+- avg_output_tokens_per_question: 2802.00
+- total_answer_tokens: 4
+- avg_answer_tokens_per_question: 4.00
+- total_explanation_tokens: 16
+- avg_explanation_tokens_per_question: 16.00
+- external_wall_time_sec: 30.59
+- external_avg_wall_time_sec_per_prediction: 30.59

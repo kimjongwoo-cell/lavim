@@ -1,0 +1,17 @@
+[
+  {
+    "role": "navigator",
+    "prompt": "The evidence plan is provided in latent KV representation format; it may contain irrelevant detail, so use only what helps and do not restate it.\nImage 1 is the whole-slide thumbnail. Image 2 is the same slide with root-grid IDs. Available root IDs: 4, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 32.\nChoose exactly 4 root IDs for x5 overview evidence. Choose exactly 8 x20 cell IDs. An x20 cell ID is row-major in a shared 4x4 grid: 1 is top-left and 16 is bottom-right; the deterministic cropper distributes these targets across the planned x5 detail anchors. Select every requested region now. Do not request another view, output coordinates, answer the question, or diagnose. Output ONLY JSON with these exact keys, replacing the placeholders with actual integer IDs: {\"root_ids\": [<id>, ...], \"detail_cell_ids\": [<cell 1-16>, ...]}",
+    "image_labels": [
+      "whole-slide-thumbnail",
+      "root-grid"
+    ],
+    "reasoning": "",
+    "final_outputs": [
+      "\"root_ids\": [4, 7, 10, 13], \"detail_cell_ids\": [1, 2, 3, 4, 5, 6, 7, 8] }"
+    ],
+    "format_repairs": 0,
+    "physical_calls": 2,
+    "elapsed_seconds": 5.6916539426893
+  }
+]

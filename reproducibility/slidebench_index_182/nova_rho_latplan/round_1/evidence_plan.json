@@ -1,0 +1,23 @@
+{
+  "question_focus": "Which feature is most prominent in the tumor?",
+  "needed_visual_information": [
+    "carried in latent planner state"
+  ],
+  "thumbnail_observations": [],
+  "search_instruction": "use the preceding latent planner state",
+  "success_criteria": [
+    "obtain 4 x5 and 8 x20 tissue patches"
+  ],
+  "detail_trigger": "fixed OnePass multi-scale allocation",
+  "scale_plan": {
+    "overview_target": "latent-planned x5 architecture",
+    "overview_patch_count": 4,
+    "detail_target": "latent-planned x20 cellular detail",
+    "detail_patch_count": 8,
+    "detail_anchor_count": 4,
+    "scale_success_criteria": [
+      "all 12 patches materialized"
+    ],
+    "patch_budget": 12
+  }
+}

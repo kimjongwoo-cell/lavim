@@ -1,0 +1,26 @@
+[
+  {
+    "source_file": "/home/super/hj/wsi_latentmas_0731/models/single_v7/thinking/results/wsivqa/qwen3-vl-4b/fair_v1_single_smoke_20260802_1818/eval/qwen3vl_general_eval.jsonl",
+    "question_id": "0",
+    "long_id": "TCGA-LD-A74U",
+    "metadata": "",
+    "answer_type": "CLOSED",
+    "question": "what is the patient's diagnosis?",
+    "choices_json": "[\"ductal carcinoma in situ\", \"invasive ductal carcinoma\", \"invasive lobular carcinoma\", \"metastatic carcinoma\"]",
+    "ground_truth": "invasive lobular carcinoma",
+    "prediction": "ductal carcinoma in situ",
+    "ground_truth_eval": "invasive lobular carcinoma",
+    "prediction_eval": "ductal carcinoma in situ",
+    "normalized_exact_match": 0.0,
+    "token_f1": 0.28571428571428575,
+    "token_precision": 0.25,
+    "token_recall": 0.3333333333333333,
+    "mcq_seq_correct": 0.0,
+    "mcq_letter_correct": 0.0,
+    "open_substring_correct": null,
+    "inference_time_sec": 30.5872323513031,
+    "num_output_tokens": 2802,
+    "num_answer_tokens": 4,
+    "num_explanation_tokens": 16
+  }
+]

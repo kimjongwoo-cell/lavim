@@ -175,7 +175,7 @@ GPU 한 장당 한 런에 약 14GB가 필요합니다. 한 장에 두 런을 같
 CUDA_VISIBLE_DEVICES=$G PYTHONPATH=$HOOKS:$REPO PYTHONUNBUFFERED=1 <arm별 env> \
 VLMAS_PROMPT_SET=prompt1 VLMAS_ATTN_IMPLEMENTATION=sdpa \
 VLMAS_NAV4=1 VLMAS_NAV2=1 VLMAS_CROSS_SCALE_ROUTER=0 \
-VLMAS_NAV3_X5_CLAMP=1 VLMAS_EFF_DUMP=1 VLMAS_ANSWERER_GRADE_RULE=1 \
+VLMAS_EFF_DUMP=1 VLMAS_ANSWERER_GRADE_RULE=1 \
 VLMAS_REASONER_TASK="<런처 안의 Reasoner 지시문>" \
 $PY -m wsi_latentmas.pipeline.latent_mas \
   --variant base --backbone qwen3-vl --dataset "$DATA/<ds>.json" --slide-root "${SLIDE_ROOT:-$DATA/slides}" \
@@ -190,7 +190,7 @@ $PY -m wsi_latentmas.pipeline.latent_mas \
 - 디코딩은 greedy(temperature 0, seed 42)라 같은 코드·입력이면 같은 답이 나옵니다.
 - `--output-root`는 존재하지 않는 새 폴더여야 합니다. 런처가 `gpu<G>_attempt_<시각>` 이름으로 만듭니다.
 - `VLMAS_NAV2=1`은 Planner가 확대 목표를 텍스트로 디코드하게 하는 스위치입니다. latplan 단계부터는 훅이 이 경로를 끕니다.
-- `VLMAS_NAV3_X5_CLAMP`는 PANDA 데이터셋용 설정이라 ExpertVQA·SlideBench에는 영향이 없습니다.
+- `VLMAS_NAV3_X5_CLAMP`는 넣지 않습니다. 좁은 슬라이드용 x5 clamp는 이미 `vision_text_mas/onepass_navigation_roots.py` 원본(123–126행)에 들어가 있고, 이 플래그의 훅(`tmp_hj/nav3_x5_clamp`)은 md5 가드 때문에 한 번도 적용되지 않았습니다(로그: `[NAV3-X5CLAMP] NOT active`). nav4 경로는 clamp 대상 함수(`_best_x5_child`)를 호출하지도 않습니다. 기존 런처 `rtask_nav4_*_arm.sh`에는 이 플래그가 남아 있지만 결과에는 영향이 없습니다.
 
 ### 4.1 nav4 base (디코딩 수정) — `base`
 
@@ -326,3 +326,73 @@ iostat -x 3 2 | grep sdb
 - 중단된 런은 같은 명령으로 다시 띄우면 남은 문항만 이어서 돕니다.
 - 실행 중인 런을 멈출 때는 자기 프로세스의 PID만 `kill <PID>`로 종료합니다. 이 서버의 `pkill`은 일반 리눅스 명령이 아닙니다.
 - `backbone/qwen3vl.py` 등 공용 코드는 다른 작업에서 바뀔 수 있습니다. 재현 전에 §3.1 md5를 확인하세요.
+
+---
+
+## 8. 요청 자료 대응표 (원본 실행 코드 · 재현 명령과 환경)
+
+모든 경로는 서버 `isyse_94_jw`의 코드 트리 `/home/users/whddn12316/wsi_latent_0915_decode_hj`(이하 `$REPO`) 기준입니다. 이 트리는 git 저장소가 아니므로 버전은 md5 앞 8자리로 표기합니다(2026-09-19 확인).
+
+### 8.1 원본 실행 코드
+
+| 요청 항목 | 해당 파일 | md5 | 설명 |
+|---|---|---|---|
+| `wsi_latentmas.pipeline.latent_mas` | `wsi_latentmas/pipeline/latent_mas.py` | `4bd0e4a1` | 실행 진입점. `python -m wsi_latentmas.pipeline.latent_mas ...` |
+| `backbone/qwen3vl.py` | `backbone/qwen3vl.py` | `9d2f3990` | Qwen3-VL 백엔드(prefill, latent step, KV 캐시). 다른 작업에서도 수정되므로 md5 확인 필요 |
+| `memory/` | `memory/` (93개 파일) | 주요 파일 아래 | 시각 토큰 선택·latent 개입 모듈. 이 문서의 설정에서 쓰는 것: `qasc_select.py`(`e97a4535`, C1 진입점), `nova_select.py`(`29b4b911`), `nova_rho_select.py`(`21423886`), `secld_select.py`(`9e902868`), `rnlcr.py`(`d76efbdd`, GLVR formation·replay) |
+| latent engine | `vision_text_mas/latent_qwen_engine.py` | `085f2bc2` | 4-역할 엔진(역할별 append, 공유 KV) |
+| | `vision_text_mas/latent_onepass.py` | `52776625` | 역할 클라이언트(Planner 목표 디코드 등) |
+| | `vision_text_mas/onepass_navigator.py` | `198bf899` | Navigator 분기(nav4 우선) |
+| | `vision_text_mas/onepass_navigation_nav4.py` | `4f6e14a4` | nav4 Navigator |
+| | `vision_text_mas/onepass_navigation_roots.py` | `0c152e4b` | root grid·x5 후보. 좁은 슬라이드 x5 clamp가 123–126행에 이미 포함 |
+| Answerer | `vision_text_mas/latent_answerer.py` | `5f0b363f` | 디코딩 수정 포함(빈 답 재디코드 제거, 토큰 예산 512) |
+| | `vision_text_mas/latent_terminal.py` | `addc7084` | Answerer 생성 루틴(`generate_terminal_json`) |
+| 실행에 필요한 hooks | `tmp_hj/lpvh_ntrs_hooks/` (`sitecustomize.py` `c18b9492`, `c1_meta_bridge.py`) | | base 기본 훅. 환경변수가 없으면 아무것도 바꾸지 않음 |
+| | `tmp_hj/latplan_hooks/sitecustomize.py` | `dc91f05e` | latplan(`VLMAS_PLAN_LATENT_ONLY=1`). 위 훅을 먼저 불러옴 |
+| | `tmp_hj/nova_rho_latplan_hooks/sitecustomize.py` | `fcdbb974` | NOVA ρ + latplan |
+| | `tmp_hj/glvr_fast2/`, `tmp_hj/glvr_fast3/` | §3.1 참고 | GLVR 계열(선택) |
+
+- 훅은 `PYTHONPATH=<훅 폴더>:$REPO`로 앞에 두면 `sitecustomize.py`가 import 훅을 설치하는 방식입니다. 원본 파일은 수정하지 않습니다.
+- `tmp_hj/nav3_x5_clamp/`는 **필요 없습니다.** 같은 수정이 `onepass_navigation_roots.py` 원본에 이미 있고, 이 훅은 md5 가드 때문에 한 번도 적용되지 않았습니다(`[NAV3-X5CLAMP] NOT active`). `VLMAS_NAV3_X5_CLAMP=1`을 빼면 `lpvh_ntrs_hooks`가 이 모듈을 import하지 않습니다.
+
+### 8.2 재현 명령과 환경
+
+**Nav4 (이 문서의 기준 설정)**
+- 명령 전체: §4.0 (환경변수 + `python -m wsi_latentmas.pipeline.latent_mas` 인자).
+- 한 파일로 정리된 실행 스크립트: `$REPO/nav4_latplan/run_latplan.sh` (nav4 + 디코딩 수정 + latplan). 사용법은 `$REPO/nav4_latplan/README.md`.
+- 단계별(base → latplan → NOVA ρ → GLVR) 실행: §2 (`sender_relay_exp/run_stack_0918.sh`, `rtask_nav4_*_arm.sh`).
+- 핵심 설정: latent step 10, patch budget 12, max-model-len 12288, Navigator control tokens 512, greedy(temperature 0, top-p 1.0, seed 42, `--deterministic`), Answerer 512 토큰 · structured JSON · rationale, attention `sdpa`.
+
+**Single Qwen3-VL-4B baseline**
+- 코드: `$REPO/models/single_v7/` (`thinking/run_thinking.sh` `775e6301`, `thinking/run_thinking.py`).
+- 런처: `$REPO/scripts/run_single_v7_fair_hf_batched.sh` — 인자 `NEW_EXPERIMENT_ROOT [DATASET_INDEX ...]`. 설정은 계약 파일 `config/wsivqa_fair_v2.json`에서 읽습니다: temperature 0.6, top-p 0.95, seed 42, max_model_len 8192, native thinking on, max_new_tokens 4096, bfloat16. 썸네일 한 장만 입력(Navigator·patch·latent step 없음).
+- **[미확인]** §5 표의 Single 수치(ExpertVQA 36.72%, SlideBench 39.59%)는 0902 런을 0913 보드에서 exact로 재채점한 값을 옮긴 것입니다. 그 런을 만든 정확한 명령·출력 폴더는 이번에 찾지 못했습니다. 위 런처와 계약 파일은 WSI-VQA용 경로(로컬 머신 `/media/super/4TB/...`)가 기본값이라, ExpertVQA·SlideBench로 재현하려면 `WSIVQA_DATASET`·`WSIVQA_SLIDE_ROOT`·`WSIVQA_MODEL`을 94번 경로로 덮어써야 합니다.
+
+**평가 코드**
+- `$REPO/scripts/rescore.py` (`ccc85f3b`): exact / norm / nospace 세 수준으로 채점합니다. 판정 규칙은 `$REPO/eval/answer_match.py`(`210a8f2a`).
+  - 같은 `dataset_index`는 가장 최근 `result.json` 하나만 씁니다.
+  - GTEx·TCGA·PANDA는 BAcc, ExpertVQA·SlideBench는 Acc입니다.
+  - 예: `python scripts/rescore.py --root sender_relay_exp/runs/nav4/latplan --dataset tcga_expert_vqa`
+- `$REPO/sender_relay_exp/tools_0918/score_pairs.py`: 두 실행을 exact로 짝비교합니다(§6).
+
+**모델 checkpoint**
+- 경로: `/home/users/whddn12316/models/Qwen3-VL-4B-Thinking` (8.3GB, 모델 카드 제목 "Qwen3-VL-4B-Thinking")
+- `config.json`: `Qwen3VLForConditionalGeneration`, `model_type` qwen3_vl, `transformers_version` 4.57.0.dev0, 텍스트 36층 · hidden 2560 · attention head 32 · KV head 8 · head_dim 128
+- 가중치: `model-00001-of-00002.safetensors` md5 `cb7a85c04a20…`, `model-00002-of-00002.safetensors` md5 `4c51b5d19e35…`
+- 실행 시 dtype bfloat16
+
+**주요 패키지 버전** (venv `/home/users/whddn12316/venvs/wsi-latentmas-py312`)
+
+| 패키지 | 버전 |
+|---|---|
+| Python | 3.12.13 |
+| torch | 2.5.1+cu121 (CUDA 12.1, cuDNN 9.1.0) |
+| transformers | 5.8.1 |
+| accelerate | 1.13.0 |
+| tokenizers | 0.22.2 |
+| safetensors | 0.7.0 |
+| numpy | 2.2.6 |
+| Pillow | 12.2.0 |
+| openslide-python | 1.4.6 (libopenslide 4.0.1) |
+| flash-attn | 설치 안 됨 (attention은 `sdpa`) |
+| GPU / 드라이버 | NVIDIA RTX A6000 (49GB) / 535.146.02 |

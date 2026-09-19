@@ -1,0 +1,14 @@
+{
+  "role": "evidence_planner",
+  "prompt": "Question stem: Which feature is most prominent in the tumor?\nUse only the question and supplied thumbnail. State what visual evidence is needed and how another agent should recognize useful regions. Do not output grid IDs, coordinates, candidate ranks, or answer choices. Do not propose a diagnosis or answer. Return exactly this JSON shape, replacing placeholder text: {\"question_focus\": \"text\", \"needed_visual_information\": [\"observable visual requirement\"], \"thumbnail_observations\": [\"non-diagnostic overview observation\"], \"search_instruction\": \"text for ranking visible regions\", \"success_criteria\": [\"observable condition for useful evidence\"], \"detail_trigger\": \"observable condition requiring finer scale\", \"scale_plan\": {\"overview_target\": \"architecture/context required at x5\", \"overview_patch_count\": 4, \"detail_target\": \"cellular evidence required at x20\", \"detail_patch_count\": 8, \"detail_anchor_count\": 4, \"scale_success_criteria\": [\"observable condition requiring both x5 and x20\"], \"patch_budget\": 12}}",
+  "image_labels": [
+    "whole-slide-thumbnail"
+  ],
+  "reasoning": "",
+  "final_outputs": [
+    "<carried-in-latent-state>"
+  ],
+  "format_repairs": 0,
+  "physical_calls": 1,
+  "elapsed_seconds": 1.4492310509085655
+}

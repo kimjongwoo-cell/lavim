@@ -1,0 +1,15 @@
+{
+  "contract_id": "wsivqa-fair-v1",
+  "contract_file": "/home/super/hj/wsi_latentmas_0731/config/wsivqa_fair_v1.json",
+  "dataset": "/home/super/hj/HJ/WSI-VQA/dataset/WSI_captions/WsiVQA_test.json",
+  "slide_root": "/media/super/4TB/hj/DATA_SVS",
+  "model": "/media/super/4TB/hj/Qwen3-VL-4B-Thinking",
+  "backend": "vllm",
+  "evaluator": "/home/super/hj/wsi_latentmas_0731/eval/metrics.py",
+  "started_at": "2026-08-02T18:23:17+09:00",
+  "git_commit": "989b6b9b500a2e4548d5f4957ea13d8e9dc34fae",
+  "max_new_tokens": 4096,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "seed": 42
+}

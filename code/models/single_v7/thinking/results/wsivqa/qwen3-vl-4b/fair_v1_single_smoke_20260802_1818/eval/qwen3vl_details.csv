@@ -1,0 +1,24 @@
+question_id,slide_id,sample_index,question,prompt,choices_json,prediction,answer,explanation,raw_prediction,choice_selection_method,ground_truth,image,inference_time_sec,num_output_tokens,num_answer_tokens,num_explanation_tokens,exact_match,normalized_exact_match,has_choices,choice_seq_correct
+0,TCGA-LD-A74U,0,what is the patient's diagnosis?,"Target Question: what is the patient's diagnosis?
+
+Choices:
+A. ductal carcinoma in situ
+B. invasive ductal carcinoma
+C. invasive lobular carcinoma
+D. metastatic carcinoma
+
+For this multiple-choice question, put only the exact choice text in the answer field.
+Using the provided WSI image, give the best-supported final answer. If choices are given, the answer must exactly match one choice. Do not request more evidence and do not write analysis before the answer.
+
+Rules:
+1. For biomarker questions (HER2, PR, ER, Ki-67 etc.): output the observed status or score only (e.g. 'Positive', 'Negative', '2+', 'High'). Do not define the term.
+2. When the question asks about survival time or other quantitative results, output ONLY the numerical value in the answer field.
+3. For vital status questions: output 'Alive' or 'Dead' only.
+4. For histological type questions: commit to a specific diagnosis.
+5. **If choices are provided, your 'answer' must be exactly one of the given options. Never generate an answer outside the provided choices.**
+
+
+Always respond in this exact format:
+answer: <exact choice text or short phrase>
+explanation: <one short sentence>","[""ductal carcinoma in situ"", ""invasive ductal carcinoma"", ""invasive lobular carcinoma"", ""metastatic carcinoma""]",ductal carcinoma in situ,ductal carcinoma in situ,"The histological features show non-invasive tumor cells confined to ducts, consistent with ductal carcinoma in situ.","answer: ductal carcinoma in situ
+explanation: The histological features show non-invasive tumor cells confined to ducts, consistent with ductal carcinoma in situ.",choice_to_choice,invasive lobular carcinoma,/home/super/hj/HJ/baseline_results/wsi-vqa/shared_thumbnails_dx1/TCGA-LD-A74U.png,30.5872323513031,2802,4,16,0,0,1,0

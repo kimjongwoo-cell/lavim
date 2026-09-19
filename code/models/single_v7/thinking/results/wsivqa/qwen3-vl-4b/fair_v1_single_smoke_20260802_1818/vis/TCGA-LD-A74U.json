@@ -1,0 +1,17 @@
+[
+  {
+    "Question": "what is the patient's diagnosis?",
+    "Choice": [
+      "ductal carcinoma in situ",
+      "invasive ductal carcinoma",
+      "invasive lobular carcinoma",
+      "metastatic carcinoma"
+    ],
+    "res": "ductal carcinoma in situ",
+    "raw_res": "answer: ductal carcinoma in situ\nexplanation: The histological features show non-invasive tumor cells confined to ducts, consistent with ductal carcinoma in situ.",
+    "choice_selection_method": "choice_to_choice",
+    "gts": "invasive lobular carcinoma",
+    "image": "/home/super/hj/HJ/baseline_results/wsi-vqa/shared_thumbnails_dx1/TCGA-LD-A74U.png",
+    "inference_time_sec": 30.5872323513031
+  }
+]

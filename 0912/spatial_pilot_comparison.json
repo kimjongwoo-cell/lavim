@@ -1,0 +1,669 @@
+{
+  "planned_ids": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120
+  ],
+  "common_completed_ids": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120
+  ],
+  "complete": true,
+  "summary": [
+    {
+      "method": "Base (existing SDPA)",
+      "n": 16,
+      "correct": 5,
+      "accuracy": 31.25,
+      "mean_seconds": 24.222125205094926,
+      "fixed": 0,
+      "regressed": 0
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "n": 16,
+      "correct": 6,
+      "accuracy": 37.5,
+      "mean_seconds": 22.000371392292436,
+      "fixed": 1,
+      "regressed": 0
+    },
+    {
+      "method": "Shuffled latent",
+      "n": 16,
+      "correct": 5,
+      "accuracy": 31.25,
+      "mean_seconds": 23.13000892760465,
+      "fixed": 0,
+      "regressed": 0
+    },
+    {
+      "method": "Spatial latent",
+      "n": 16,
+      "correct": 5,
+      "accuracy": 31.25,
+      "mean_seconds": 22.660325930221006,
+      "fixed": 0,
+      "regressed": 0
+    }
+  ],
+  "cases": [
+    {
+      "method": "Base (existing SDPA)",
+      "id": 0,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "High",
+      "gold": "Low",
+      "wall_seconds": 21.970165024511516
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 8,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Glandular",
+      "gold": "Glandular",
+      "wall_seconds": 20.18058064393699
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 16,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Predominantly two approximately equally sized pieces",
+      "gold": "Predominantly three approximately equally sized pieces",
+      "wall_seconds": 20.673984891735017
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 24,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Eosinophilic",
+      "gold": "Eosinophilic",
+      "wall_seconds": 24.12391621619463
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 32,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Increased",
+      "gold": "Increased",
+      "wall_seconds": 66.4686884060502
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 40,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Fibrous connective tissue",
+      "gold": "Fibrous connective tissue",
+      "wall_seconds": 19.32709175813943
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 48,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Confined to the dermis",
+      "gold": "Subcutaneous tissue",
+      "wall_seconds": 24.178076966665685
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 56,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Urothelial",
+      "wall_seconds": 19.034021627157927
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 64,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Clear cell",
+      "gold": "Papillary",
+      "wall_seconds": 20.557127562351525
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 72,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "61-90%",
+      "gold": "30-60%",
+      "wall_seconds": 19.55652418266982
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 80,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Indeterminate",
+      "gold": "Indeterminate",
+      "wall_seconds": 19.28718070499599
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 88,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Chronic inflammation",
+      "gold": "Fibrosis",
+      "wall_seconds": 25.91980697121471
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 96,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Squamous",
+      "wall_seconds": 19.241730028763413
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 104,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Coarse/clumped",
+      "gold": "Finely stippled",
+      "wall_seconds": 22.107020614668727
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 112,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Fat",
+      "gold": "Arteries",
+      "wall_seconds": 22.588372393511236
+    },
+    {
+      "method": "Base (existing SDPA)",
+      "id": 120,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Upper left",
+      "gold": "Lower left",
+      "wall_seconds": 22.339715288951993
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 0,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "High",
+      "gold": "Low",
+      "wall_seconds": 19.950469655916095
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 8,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Glandular",
+      "gold": "Glandular",
+      "wall_seconds": 20.391730663366616
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 16,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Predominantly two approximately equally sized pieces",
+      "gold": "Predominantly three approximately equally sized pieces",
+      "wall_seconds": 20.65003812778741
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 24,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Eosinophilic",
+      "gold": "Eosinophilic",
+      "wall_seconds": 20.44367673806846
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 32,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Increased",
+      "gold": "Increased",
+      "wall_seconds": 60.230761513113976
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 40,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Fibrous connective tissue",
+      "gold": "Fibrous connective tissue",
+      "wall_seconds": 18.86220454238355
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 48,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Confined to the dermis",
+      "gold": "Subcutaneous tissue",
+      "wall_seconds": 20.348552852869034
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 56,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Urothelial",
+      "wall_seconds": 20.39964348822832
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 64,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Clear cell",
+      "gold": "Papillary",
+      "wall_seconds": 19.55068388581276
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 72,
+      "correct": true,
+      "base_correct": false,
+      "prediction": "30-60%",
+      "gold": "30-60%",
+      "wall_seconds": 15.721794781275094
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 80,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Indeterminate",
+      "gold": "Indeterminate",
+      "wall_seconds": 18.613791359588504
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 88,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Chronic inflammation",
+      "gold": "Fibrosis",
+      "wall_seconds": 17.71797084901482
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 96,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Squamous",
+      "wall_seconds": 19.261787130497396
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 104,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Coarse/clumped",
+      "gold": "Finely stippled",
+      "wall_seconds": 22.972684842534363
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 112,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Nerve",
+      "gold": "Arteries",
+      "wall_seconds": 17.85296531766653
+    },
+    {
+      "method": "Pruning-B (existing SDPA)",
+      "id": 120,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Upper left",
+      "gold": "Lower left",
+      "wall_seconds": 19.03718652855605
+    },
+    {
+      "method": "Spatial latent",
+      "id": 0,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "High",
+      "gold": "Low",
+      "wall_seconds": 19.508057782426476
+    },
+    {
+      "method": "Spatial latent",
+      "id": 8,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Glandular",
+      "gold": "Glandular",
+      "wall_seconds": 20.10854290612042
+    },
+    {
+      "method": "Spatial latent",
+      "id": 16,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Predominantly two approximately equally sized pieces",
+      "gold": "Predominantly three approximately equally sized pieces",
+      "wall_seconds": 23.68225770443678
+    },
+    {
+      "method": "Spatial latent",
+      "id": 24,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Eosinophilic",
+      "gold": "Eosinophilic",
+      "wall_seconds": 23.280501353554428
+    },
+    {
+      "method": "Spatial latent",
+      "id": 32,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Increased",
+      "gold": "Increased",
+      "wall_seconds": 51.954792100936174
+    },
+    {
+      "method": "Spatial latent",
+      "id": 40,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Fibrous connective tissue",
+      "gold": "Fibrous connective tissue",
+      "wall_seconds": 18.859791186638176
+    },
+    {
+      "method": "Spatial latent",
+      "id": 48,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Confined to the dermis",
+      "gold": "Subcutaneous tissue",
+      "wall_seconds": 19.890901679173112
+    },
+    {
+      "method": "Spatial latent",
+      "id": 56,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Urothelial",
+      "wall_seconds": 20.007103824056685
+    },
+    {
+      "method": "Spatial latent",
+      "id": 64,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Clear cell",
+      "gold": "Papillary",
+      "wall_seconds": 20.461036812514067
+    },
+    {
+      "method": "Spatial latent",
+      "id": 72,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "61-90%",
+      "gold": "30-60%",
+      "wall_seconds": 18.045017659664154
+    },
+    {
+      "method": "Spatial latent",
+      "id": 80,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Indeterminate",
+      "gold": "Indeterminate",
+      "wall_seconds": 19.94343304540962
+    },
+    {
+      "method": "Spatial latent",
+      "id": 88,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Chronic inflammation",
+      "gold": "Fibrosis",
+      "wall_seconds": 25.718410901725292
+    },
+    {
+      "method": "Spatial latent",
+      "id": 96,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Squamous",
+      "wall_seconds": 20.692487864755094
+    },
+    {
+      "method": "Spatial latent",
+      "id": 104,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Coarse/clumped",
+      "gold": "Finely stippled",
+      "wall_seconds": 19.9807172967121
+    },
+    {
+      "method": "Spatial latent",
+      "id": 112,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Fat",
+      "gold": "Arteries",
+      "wall_seconds": 18.510390175506473
+    },
+    {
+      "method": "Spatial latent",
+      "id": 120,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Upper left",
+      "gold": "Lower left",
+      "wall_seconds": 21.92177258990705
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 0,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "High",
+      "gold": "Low",
+      "wall_seconds": 21.64546780474484
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 8,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Glandular",
+      "gold": "Glandular",
+      "wall_seconds": 20.678340988233685
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 16,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Predominantly two approximately equally sized pieces",
+      "gold": "Predominantly three approximately equally sized pieces",
+      "wall_seconds": 23.565361212939024
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 24,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Eosinophilic",
+      "gold": "Eosinophilic",
+      "wall_seconds": 22.27804895862937
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 32,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Increased",
+      "gold": "Increased",
+      "wall_seconds": 53.71144019253552
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 40,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Fibrous connective tissue",
+      "gold": "Fibrous connective tissue",
+      "wall_seconds": 20.4030680404976
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 48,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Confined to the dermis",
+      "gold": "Subcutaneous tissue",
+      "wall_seconds": 21.42671678122133
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 56,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Urothelial",
+      "wall_seconds": 19.958382859826088
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 64,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Clear cell",
+      "gold": "Papillary",
+      "wall_seconds": 19.44483088888228
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 72,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "61-90%",
+      "gold": "30-60%",
+      "wall_seconds": 19.566699909977615
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 80,
+      "correct": true,
+      "base_correct": true,
+      "prediction": "Indeterminate",
+      "gold": "Indeterminate",
+      "wall_seconds": 17.377793623134494
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 88,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Chronic inflammation",
+      "gold": "Fibrosis",
+      "wall_seconds": 26.954047355800867
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 96,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Adenocarcinoma",
+      "gold": "Squamous",
+      "wall_seconds": 20.840225459076464
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 104,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Coarse/clumped",
+      "gold": "Finely stippled",
+      "wall_seconds": 21.42986360285431
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 112,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Fat",
+      "gold": "Arteries",
+      "wall_seconds": 18.91098098643124
+    },
+    {
+      "method": "Shuffled latent",
+      "id": 120,
+      "correct": false,
+      "base_correct": false,
+      "prediction": "Upper left",
+      "gold": "Lower left",
+      "wall_seconds": 21.888874176889658
+    }
+  ],
+  "audits": "Exact patches, prompts, labels, schedule, hook calls, group size and parent identity checked",
+  "timing_note": "Base/Pruning timings are historical, not simultaneous controlled latency measurements.",
+  "sources": {
+    "Base (existing SDPA)": "/home/users/whddn12316/wsi_latent_0915_decode_hj/0912/runs/base_sdpa_gpu6",
+    "Pruning-B (existing SDPA)": "/home/users/whddn12316/wsi_latent_0915_decode_hj/0912/runs/pruning_b_sdpa_gpu8",
+    "Spatial latent": "/home/users/whddn12316/wsi_latent_0915_decode_hj/0912/runs/spatial_spatial_pilot_gpu6",
+    "Shuffled latent": "/home/users/whddn12316/wsi_latent_0915_decode_hj/0912/runs/spatial_shuffled_pilot_gpu8"
+  },
+  "source_sha256": {
+    "spatial_latent/__init__.py": "8946a42c7b511e40bc51549503939611590443fe526c9135ab04b831bab824a1",
+    "spatial_latent/attention.py": "79b58a600ac6f72a1db3773b22097bbe9da602fb807b9e1196ca8f1ca6683bcd",
+    "spatial_latent/grouping.py": "679d64764cf850ce671f0a898e498d0cb9d48f87b74cb1ecbf591bf8ebfe77b9",
+    "spatial_latent/runtime.py": "ecd06dafeb7aa7ffaa412ce3bd8777041534b76a75497662e53bcfea3b07c19d"
+  }
+}

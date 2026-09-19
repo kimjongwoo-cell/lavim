@@ -1,0 +1,74 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WSI LatentMAS 실시간 비교</title><style>
+:root{--canvas:#08090a;--panel:#0f1011;--raised:#191a1b;--text:#f7f8f8;--muted:#8a8f98;--border:rgba(255,255,255,.08);--accent:#7170ff;--success:#34d399;--running:#62a8ff;--warning:#fbbf24}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--text);font:14px/1.5 Inter,system-ui,sans-serif}.shell{width:min(1180px,calc(100% - 32px));margin:auto;padding:32px 0 48px}header{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}.eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}h1{margin:0;font-size:30px;letter-spacing:-.7px}.meta{margin:6px 0 0;color:var(--muted)}button{border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);padding:8px 12px;cursor:pointer}button:hover{background:var(--raised);opacity:.96;transform:translateY(-1px)}button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.card,.dataset-panel,.origin-card{border:1px solid var(--border);border-radius:12px;background:var(--panel)}.card{padding:16px}.label{color:var(--muted);font-size:12px}.value{margin:5px 0 0;font:650 24px/1.2 ui-monospace,monospace}.dataset-groups{display:grid;gap:16px}.dataset-panel{overflow:hidden}.dataset-title{margin:0;padding:14px 16px;border-bottom:1px solid var(--border);background:var(--raised);font-size:16px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--border)}th{color:var(--muted);font-size:12px;font-weight:600}tr:last-child td{border-bottom:0}.mono{font-family:ui-monospace,monospace}.score{font-weight:700}.chip{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--running)}.completed .dot{background:var(--success)}.bar{width:130px;height:5px;background:var(--raised);border-radius:9px;overflow:hidden;margin-top:5px}.bar span{display:block;height:100%;background:var(--running)}.completed .bar span{background:var(--success)}.note{color:var(--muted);font-size:12px;margin:10px 2px 0}.origin-section{margin-top:28px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:12px}.section-heading h2{margin:0;font-size:18px}.legend{display:flex;gap:12px;color:var(--muted);font-size:12px}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:2px;background:var(--accent)}.swatch.x20{background:var(--warning)}.origin-list{display:grid;gap:16px}.origin-card{overflow:hidden}.origin-head{padding:14px 16px;border-bottom:1px solid var(--border);background:var(--raised)}.origin-head strong{display:block}.origin-question{margin:4px 0 0;color:var(--muted)}.origin-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:16px;padding:16px}.slide-map{position:relative;align-self:start;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--canvas)}.slide-map img{display:block;width:100%;height:auto}.slide-map svg{position:absolute;inset:0;width:100%;height:100%}.x5-box{fill:none;stroke:var(--accent);stroke-width:120}.x20-box{fill:none;stroke:var(--warning);stroke-width:80}.box-label{font:700 900px ui-monospace,monospace;paint-order:stroke;stroke:var(--canvas);stroke-width:180;stroke-linejoin:round}.x5-label{fill:var(--accent)}.x20-label{fill:var(--warning)}.patch-groups{display:grid;gap:14px;align-content:start}.patch-group h3{margin:0 0 8px;font-size:13px}.patch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.patch-item{padding:8px;border:1px solid var(--border);border-radius:7px;background:var(--canvas);font:12px/1.45 ui-monospace,monospace}.patch-item b{color:var(--accent)}.patch-group.x20 b{color:var(--warning)}.evidence-strip{display:block;width:100%;border-top:1px solid var(--border);background:var(--canvas)}@media(max-width:760px){.shell{width:calc(100% - 24px);padding-top:22px}header,.section-heading{align-items:flex-start;flex-direction:column}.cards{grid-template-columns:1fr}.origin-body{grid-template-columns:1fr}.patch-grid{grid-template-columns:1fr 1fr}h1{font-size:25px}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s ease,opacity .12s ease,transform .12s ease}}
+</style><style>.queued .dot,.queued .bar span{background:var(--warning)}.chip{white-space:nowrap}</style></head><body><main class="shell"><header><div><p class="eyebrow">WSI LatentMAS · Nav2 / Nav3 · Prompt1</p><h1>Pruning / Relay 실시간 비교</h1><p class="meta" id="updated">결과를 읽는 중…</p></div><button id="refresh" type="button">지금 새로고침</button></header><section class="cards" aria-label="요약"><article class="card"><div class="label">진행 중 조건</div><p class="value" id="running">—</p></article><article class="card"><div class="label">수집된 결과</div><p class="value" id="cases">—</p></article><article class="card"><div class="label">표시 조건</div><p class="value" id="conditions">—</p></article></section><section class="dataset-groups" id="groups" aria-label="데이터셋별 성능 비교"><p>결과를 읽는 중…</p></section><section class="origin-section" aria-labelledby="origin-title"><div class="section-heading"><div><p class="eyebrow">Independent-scale navigator</p><h2 id="origin-title">x5 4개 · x20 8개 선택 위치</h2></div><div class="legend" aria-label="박스 색상"><span><i class="swatch"></i>x5 최종 패치</span><span><i class="swatch x20"></i>x20 최종 패치</span></div></div><div class="origin-list" id="origin-list"><p>선택 위치를 읽는 중…</p></div></section><p class="note">각 데이터셋의 Base·Nav2·Nav3 Prompt1 조건을 비교합니다. Pruning-B 보존율별 실행과 All Agents 결과도 함께 갱신합니다.</p></main><script>
+const esc=v=>String(v).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[c]);
+const fmt=v=>v===null?'—':`${v.toFixed(2)}%`;
+const order=['Nav1 Base','Nav1 Both (Pruning-B + Relay2)','Nav2 Base','Nav2 Both (Pruning-B + Relay2)','Nav3 Base','Nav3 Both (Pruning-B + Dual Relay2)','Nav3 E-AdaPrune Pathology + Dual Relay2','Nav3 ATP-SAP Pathology + Dual Relay2','Nav3 Both (Pruning-B · Visual KV 50% 보존 + Dual Relay2)','Nav3 Base (x20 + x40, 20-case)','Nav3 Text VLM-MAS (20-case)','Pruning-B','Relay2','Both (Pruning-B + Relay3 Context)'];
+const stateLabels={running:'진행 중',queued:'대기',stopped:'중지됨',completed:'완료',not_run:'미실행'};
+let busy=false;
+const patchBox=(p,kind)=>`<rect class="${kind}-box" x="${p.x}" y="${p.y}" width="${p.width}" height="${p.height}"></rect><text class="box-label ${kind}-label" x="${p.x+p.width*.04}" y="${p.y+p.height*.22}">${esc(p.patch_id)}</text>`;
+const x20Map=p=>{const groups=Object.values(p.reduce((all,item)=>{(all[item.root_id]??=[]).push(item);return all},{}));return groups.map(group=>`${group.map(item=>`<rect class="x20-box" x="${item.x}" y="${item.y}" width="${item.width}" height="${item.height}"></rect>`).join('')}<text class="box-label x20-label" x="${Math.min(...group.map(item=>item.x))}" y="${Math.min(...group.map(item=>item.y))-220}">${group.map(item=>esc(item.patch_id.replace('R1-',''))).join('·')}</text>`).join('')};
+const patchItem=p=>`<div class="patch-item"><b>${esc(p.patch_id)}</b> · root ${p.root_id}<br>cell ${p.candidate_id} · tissue ${(p.tissue_fraction*100).toFixed(1)}%</div>`;
+const originCard=c=>`<article class="origin-card"><div class="origin-head"><strong>ExpertVQA ID ${c.dataset_index}</strong><p class="origin-question">${esc(c.question)}</p></div><div class="origin-body"><div class="slide-map"><img src="${c.thumbnail_url}" width="1024" height="1024" alt="사례 ${c.dataset_index} WSI 썸네일"><svg viewBox="0 0 ${c.slide_width} ${c.slide_height}" role="img" aria-label="x5 및 x20 패치 원본 위치">${c.x5_patches.map(p=>patchBox(p,'x5')).join('')}${x20Map(c.x20_patches)}</svg></div><div class="patch-groups"><section class="patch-group"><h3>x5 최종 4개</h3><div class="patch-grid">${c.x5_patches.map(patchItem).join('')}</div></section><section class="patch-group x20"><h3>x20 최종 8개 · 독립 루트</h3><div class="patch-grid">${c.x20_patches.map(patchItem).join('')}</div></section></div></div><img class="evidence-strip" src="${c.evidence_board_url}" alt="사례 ${c.dataset_index} 최종 12패치"></article>`;
+async function load(){
+  if(busy)return;
+  busy=true;
+  try{
+    const res=await fetch(`/api/status?t=${Date.now()}`,{cache:'no-store'});
+    const data=await res.json();
+    const rows=data.rows;
+    document.querySelector('#updated').textContent=`최근 갱신 ${new Date(data.updated_at).toLocaleString('ko-KR')} · 1초 자동 갱신`;
+    document.querySelector('#running').textContent=rows.filter(r=>r.state==='running').length;
+    document.querySelector('#cases').textContent=rows.reduce((n,r)=>n+r.completed,0).toLocaleString();
+    document.querySelector('#conditions').textContent=rows.length;
+    const datasets=[...new Set(rows.map(r=>r.dataset))];
+    document.querySelector('#groups').innerHTML=datasets.length?datasets.map(dataset=>{
+      const group=rows.filter(r=>r.dataset===dataset).sort((a,b)=>order.indexOf(a.variant)-order.indexOf(b.variant));
+      return `<article class="dataset-panel"><h2 class="dataset-title">${esc(dataset)}</h2><div class="table-wrap"><table><thead><tr><th>방법</th><th>상태</th><th>진행</th><th>잠정 성능</th><th>정답 수</th><th>전체 속도</th></tr></thead><tbody>${group.map(r=>{
+        const pct=Math.min(100,Math.round(r.completed/r.target*100));
+        const status=stateLabels[r.state]??'상태 확인';
+        return `<tr class="${r.state}"><td><strong>${esc(r.variant)}</strong></td><td><span class="chip"><span class="dot"></span>${status}</span></td><td class="mono">${r.completed}/${r.target}<div class="bar" aria-label="${pct}%"><span style="width:${pct}%"></span></div></td><td class="mono score">${r.score_name} ${fmt(r.score)}</td><td class="mono">${r.correct}/${r.completed}</td><td class="mono">${r.seconds_per_case===null?'—':r.seconds_per_case.toFixed(2)+'초'}</td></tr>`
+      }).join('')}</tbody></table></div></article>`
+    }).join(''):'<p>표시할 결과가 없습니다.</p>';
+    document.querySelector('#origin-list').innerHTML=data.nav3_cases.length?data.nav3_cases.map(originCard).join(''):'<p>표시할 선택 결과가 없습니다.</p>';
+  }catch(e){
+    document.querySelector('#updated').textContent='데이터를 읽지 못했습니다.'
+  }finally{
+    busy=false
+  }
+}
+document.querySelector('#refresh').addEventListener('click',load);
+load();
+setInterval(load,1000);
+</script>
+<style>
+.not_run .dot,.not_run .bar span{background:var(--muted)}
+.stopped .dot,.stopped .bar span{background:var(--muted)}
+.panda-evidence{margin-top:28px}.panda-evidence-card{overflow:hidden;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.panda-evidence-copy{padding:14px 16px;border-bottom:1px solid var(--border);background:var(--raised)}.panda-evidence-copy strong{display:block}.panda-evidence-copy p{margin:4px 0 0;color:var(--muted)}
+.panda-evidence-link{display:block;background:var(--canvas)}.panda-evidence-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.panda-evidence-link img{display:block;width:100%;height:auto}
+@media(max-width:700px){
+  .table-wrap{overflow:visible}
+  table{min-width:0;table-layout:fixed}
+  thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  tbody{display:grid;gap:8px;padding:8px}
+  tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--canvas)}
+  tbody td{min-width:0;padding:0;border:0;overflow-wrap:anywhere}
+  tbody td:first-child{grid-column:1/-1}
+  tbody td:not(:first-child)::before{display:block;margin-bottom:4px;color:var(--muted);font-size:12px;line-height:16px}
+  tbody td:nth-child(2)::before{content:"상태"}
+  tbody td:nth-child(3)::before{content:"진행"}
+  tbody td:nth-child(4)::before{content:"잠정 성능"}
+  tbody td:nth-child(5)::before{content:"정답 수"}
+  tbody td:nth-child(6)::before{content:"전체 속도"}
+  .bar{width:100%;max-width:130px}
+}
+</style>
+<script>
+const pandaEvidence=document.createElement('section');
+pandaEvidence.className='panda-evidence';
+pandaEvidence.setAttribute('aria-labelledby','panda-evidence-title');
+pandaEvidence.innerHTML='<div class="section-heading"><div><p class="eyebrow">PANDA failure inspection</p><h2 id="panda-evidence-title">Navigator 선택 위치와 패치 · 정답 1/3/3 → 예측 0</h2></div><div class="legend" aria-label="박스 색상"><span><i class="swatch"></i>x5</span><span><i class="swatch x20"></i>x20</span></div></div><article class="panda-evidence-card"><div class="panda-evidence-copy"><strong>전체 WSI에서 선택된 위치</strong><p>보라색은 x5, 노란색은 x20 선택 영역입니다.</p></div><a class="panda-evidence-link" href="/nav3-assets/panda_nav3_selected_overview.jpg" target="_blank" rel="noopener"><img src="/nav3-assets/panda_nav3_selected_overview.jpg" width="1156" height="1560" alt="PANDA 오답 사례 3개의 전체 WSI와 Navigator 선택 위치"></a><div class="panda-evidence-copy"><strong>선택 패치 확대</strong><p>각 사례의 x5 4개와 x20 4개입니다.</p></div><a class="panda-evidence-link" href="/nav3-assets/panda_nav3_selected_patches.jpg" target="_blank" rel="noopener"><img src="/nav3-assets/panda_nav3_selected_patches.jpg" width="1156" height="1608" alt="PANDA 오답 사례 3개의 Navigator 선택 패치 모음"></a></article>';
+document.querySelector('.origin-section').before(pandaEvidence);
+</script>
+</body></html>

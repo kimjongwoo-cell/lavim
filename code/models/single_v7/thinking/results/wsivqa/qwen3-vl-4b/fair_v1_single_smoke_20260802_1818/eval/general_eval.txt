@@ -1,0 +1,34 @@
+{'testlen': 4, 'reflen': 3, 'guess': [4, 3, 2, 1], 'correct': [1, 0, 0, 0]}
+ratio: 1.3333333328888892
+
+=== General WSI-VQA Evaluation ===
+Files: 1 | Rows: 1 | Valid: 1 | Skipped(no GT/pred): 0/0
+
+[Answer-Type Split]
+MCQ/CLOSED: 0/1 = 0.00%
+OPEN:       0/0 = 0.00%  (substring match)
+TOTAL:      0.00%  (MCQ correct + OPEN substring correct)
+
+[Open-Ended Text Metrics: OPEN only]
+BLEU-1=0.0000 BLEU-2=0.0000 BLEU-3=0.0000 BLEU-4=0.0000 METEOR=0.0000 ROUGE-L=0.0000
+
+[All Valid Rows Text Metrics: MCQ + OPEN]
+BLEU-1=0.2500 BLEU-2=0.0000 BLEU-3=0.0000 BLEU-4=0.0000 METEOR=0.1311 ROUGE-L=0.2933
+ExactMatch=0.00% TokenF1=28.57%
+TokenF1(all)  P=25.00% R=33.33% | TokenF1(open)=N/A P=N/A R=N/A
+
+[MCQ Detail]
+SeqMatcher=0.00% Letter=0.00%
+
+[Inference Time]
+Total=30.59s | Avg/sample=30.59s
+External wall time=30.59s | Avg=30.59s
+
+[Token] Total=2802 | Avg/question=2802.00
+Answer=4 (Avg=4.00) | Explanation=16 (Avg=16.00)
+
+[Saved]
+Report TXT:  /home/super/hj/wsi_latentmas_0731/models/single_v7/thinking/results/wsivqa/qwen3-vl-4b/fair_v1_single_smoke_20260802_1818/eval/general/qwen3_vl_4b_WsiVQA_test_report.txt
+Details CSV: /home/super/hj/wsi_latentmas_0731/models/single_v7/thinking/results/wsivqa/qwen3-vl-4b/fair_v1_single_smoke_20260802_1818/eval/general/qwen3_vl_4b_WsiVQA_test_details.csv
+Details JSON: /home/super/hj/wsi_latentmas_0731/models/single_v7/thinking/results/wsivqa/qwen3-vl-4b/fair_v1_single_smoke_20260802_1818/eval/general/qwen3_vl_4b_WsiVQA_test_details.json
+Summary JSON: /home/super/hj/wsi_latentmas_0731/models/single_v7/thinking/results/wsivqa/qwen3-vl-4b/fair_v1_single_smoke_20260802_1818/eval/general/qwen3_vl_4b_WsiVQA_test_summary.json

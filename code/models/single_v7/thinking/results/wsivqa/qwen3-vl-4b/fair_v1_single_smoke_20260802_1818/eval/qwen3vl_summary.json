@@ -1,0 +1,16 @@
+{
+  "num_samples": 1,
+  "num_slides": 1,
+  "exact_match": 0.0,
+  "normalized_exact_match": 0.0,
+  "num_choice_samples": 1,
+  "choice_seq_accuracy": 0.0,
+  "total_inference_time_sec": 30.5872323513031,
+  "avg_inference_time_sec_per_question": 30.5872323513031,
+  "total_output_tokens": 2802,
+  "avg_output_tokens_per_question": 2802.0,
+  "total_answer_tokens": 4,
+  "avg_answer_tokens_per_question": 4.0,
+  "total_explanation_tokens": 16,
+  "avg_explanation_tokens_per_question": 16.0
+}

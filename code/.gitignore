@@ -1,0 +1,8 @@
+# Intermediate run images (crops/zooms) from scripts/point_standalone.sh. They live
+# inside each run's own result folder now, next to predictions.jsonl and logs/.
+# A full sweep is ~6GB / thousands of files, so keep them out of git.
+**/images/
+
+# Old layout: images went to a separate tree (IMG_BASE). Kept so the runs that already
+# landed there before the move do not show up as untracked.
+/run_images/

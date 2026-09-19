@@ -1,0 +1,23 @@
+{
+  "question_focus": "Which feature is most prominent in the tumor?",
+  "needed_visual_information": [
+    "carried in latent planner state"
+  ],
+  "thumbnail_observations": [],
+  "search_instruction": "use the preceding latent planner state",
+  "success_criteria": [
+    "obtain 4 x5 and 8 x20 tissue patches"
+  ],
+  "detail_trigger": "fixed OnePass multi-scale allocation",
+  "scale_plan": {
+    "overview_target": "tumor architecture with prominent vascular structures and irregular cellular patterns",
+    "overview_patch_count": 4,
+    "detail_target": "cellular morphology including nuclear atypia and mitotic figures",
+    "detail_patch_count": 8,
+    "detail_anchor_count": 4,
+    "scale_success_criteria": [
+      "all 12 patches materialized"
+    ],
+    "patch_budget": 12
+  }
+}

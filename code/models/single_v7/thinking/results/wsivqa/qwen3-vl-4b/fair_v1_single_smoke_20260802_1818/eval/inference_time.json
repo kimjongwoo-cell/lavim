@@ -1,0 +1,7 @@
+{
+  "inference_time_sec": 30.5872323513031,
+  "num_predictions": 1,
+  "total_output_tokens": 2802,
+  "total_answer_tokens": 4,
+  "total_explanation_tokens": 16
+}

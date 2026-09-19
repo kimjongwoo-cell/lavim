@@ -1,0 +1,8 @@
+{
+  "venvPath": "/home/users/whddn12316/venvs",
+  "venv": "wsi-latentmas-py312",
+  "pythonVersion": "3.12",
+  "extraPaths": [".", ".."],
+  "include": ["spatial_latent", "run_spatial_latent.py", "test_spatial_latent.py"],
+  "typeCheckingMode": "standard"
+}

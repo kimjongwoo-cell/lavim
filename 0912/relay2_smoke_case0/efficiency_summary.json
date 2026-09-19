@@ -1,0 +1,43 @@
+{
+  "successful_cases": 1,
+  "failed_attempts_excluded": 0,
+  "case_wall_seconds": {
+    "mean": 23.680621430277824,
+    "median": 23.680621430277824,
+    "min": 23.680621430277824,
+    "max": 23.680621430277824
+  },
+  "peak_allocated_bytes": {
+    "mean": 14750300160.0,
+    "median": 14750300160.0,
+    "min": 14750300160.0,
+    "max": 14750300160.0
+  },
+  "peak_reserved_bytes": {
+    "mean": 15533604864.0,
+    "median": 15533604864.0,
+    "min": 15533604864.0,
+    "max": 15533604864.0
+  },
+  "role_call_seconds": {
+    "mean": 14.141028689220548,
+    "median": 14.141028689220548,
+    "min": 14.141028689220548,
+    "max": 14.141028689220548
+  },
+  "physical_calls": {
+    "mean": 5.0,
+    "median": 5.0,
+    "min": 5.0,
+    "max": 5.0
+  },
+  "format_repairs": {
+    "mean": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.0
+  },
+  "requested_cases": 1,
+  "terminal_failed_cases": 0,
+  "efficiency_note": "Failure attempts and terminal failures are excluded from efficiency distributions."
+}
